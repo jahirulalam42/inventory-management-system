@@ -1,0 +1,1464 @@
+{
+  "dashboard": {
+    "salesOverview": {
+      "sales": 15420,
+      "revenue": 92350,
+      "profit": 28940,
+      "cost": 63410
+    },
+    "purchaseOverview": {
+      "purchases": 124,
+      "cost": 58720,
+      "cancel": 8,
+      "return": 12
+    },
+    "inventorySummary": {
+      "quantityInHand": 3420,
+      "toBeReceived": 850
+    },
+    "productSummary": {
+      "suppliers": 24,
+      "categories": 12
+    },
+    "salesPurchasesChart": {
+      "monthly": [
+        { "month": "Jan", "sales": 12000, "purchases": 8000 },
+        { "month": "Feb", "sales": 19000, "purchases": 10000 },
+        { "month": "Mar", "sales": 15000, "purchases": 12000 },
+        { "month": "Apr", "sales": 18000, "purchases": 9000 },
+        { "month": "May", "sales": 22000, "purchases": 15000 },
+        { "month": "Jun", "sales": 19500, "purchases": 11000 },
+        { "month": "Jul", "sales": 23000, "purchases": 14000 },
+        { "month": "Aug", "sales": 21000, "purchases": 13000 },
+        { "month": "Sep", "sales": 19000, "purchases": 12000 },
+        { "month": "Oct", "sales": 25000, "purchases": 16000 },
+        { "month": "Nov", "sales": 28000, "purchases": 18000 },
+        { "month": "Dec", "sales": 32000, "purchases": 20000 }
+      ],
+      "weekly": [
+        { "week": "Week 1", "sales": 4500, "purchases": 3000 },
+        { "week": "Week 2", "sales": 5200, "purchases": 3500 },
+        { "week": "Week 3", "sales": 4800, "purchases": 3200 },
+        { "week": "Week 4", "sales": 5500, "purchases": 3800 }
+      ],
+      "daily": [
+        { "day": "Mon", "sales": 1800, "purchases": 1200 },
+        { "day": "Tue", "sales": 2200, "purchases": 1500 },
+        { "day": "Wed", "sales": 1900, "purchases": 1300 },
+        { "day": "Thu", "sales": 2400, "purchases": 1600 },
+        { "day": "Fri", "sales": 2800, "purchases": 1800 },
+        { "day": "Sat", "sales": 3200, "purchases": 2000 },
+        { "day": "Sun", "sales": 1500, "purchases": 1000 }
+      ],
+      "yearly": [
+        { "year": 2020, "sales": 180000, "purchases": 120000 },
+        { "year": 2021, "sales": 210000, "purchases": 140000 },
+        { "year": 2022, "sales": 240000, "purchases": 160000 },
+        { "year": 2023, "sales": 280000, "purchases": 190000 },
+        { "year": 2024, "sales": 320000, "purchases": 220000 }
+      ]
+    },
+    "orderSummary": [
+      { "month": "Jan", "ordered": 145, "delivered": 138 },
+      { "month": "Feb", "ordered": 168, "delivered": 160 },
+      { "month": "Mar", "ordered": 192, "delivered": 185 },
+      { "month": "Apr", "ordered": 175, "delivered": 168 },
+      { "month": "May", "ordered": 210, "delivered": 202 },
+      { "month": "Jun", "ordered": 198, "delivered": 190 },
+      { "month": "Jul", "ordered": 225, "delivered": 218 },
+      { "month": "Aug", "ordered": 240, "delivered": 232 },
+      { "month": "Sep", "ordered": 215, "delivered": 208 },
+      { "month": "Oct", "ordered": 265, "delivered": 258 },
+      { "month": "Nov", "ordered": 280, "delivered": 272 },
+      { "month": "Dec", "ordered": 310, "delivered": 302 }
+    ],
+    "topSellingStock": [
+      {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "soldQuantity": 245,
+        "remainingQuantity": 56,
+        "price": 129.99
+      },
+      {
+        "id": 2,
+        "name": "Smartphone X",
+        "soldQuantity": 189,
+        "remainingQuantity": 42,
+        "price": 899.99
+      },
+      {
+        "id": 3,
+        "name": "Laptop Pro",
+        "soldQuantity": 156,
+        "remainingQuantity": 23,
+        "price": 1299.99
+      },
+      {
+        "id": 4,
+        "name": "Bluetooth Speaker",
+        "soldQuantity": 312,
+        "remainingQuantity": 89,
+        "price": 79.99
+      },
+      {
+        "id": 5,
+        "name": "Fitness Tracker",
+        "soldQuantity": 278,
+        "remainingQuantity": 67,
+        "price": 199.99
+      },
+      {
+        "id": 6,
+        "name": "4K Monitor",
+        "soldQuantity": 134,
+        "remainingQuantity": 31,
+        "price": 449.99
+      },
+      {
+        "id": 7,
+        "name": "Gaming Mouse",
+        "soldQuantity": 423,
+        "remainingQuantity": 125,
+        "price": 59.99
+      },
+      {
+        "id": 8,
+        "name": "Mechanical Keyboard",
+        "soldQuantity": 287,
+        "remainingQuantity": 78,
+        "price": 129.99
+      },
+      {
+        "id": 9,
+        "name": "Power Bank 20000mAh",
+        "soldQuantity": 356,
+        "remainingQuantity": 142,
+        "price": 49.99
+      },
+      {
+        "id": 10,
+        "name": "Webcam HD",
+        "soldQuantity": 198,
+        "remainingQuantity": 45,
+        "price": 89.99
+      }
+    ],
+    "lowQuantityStock": [
+      {
+        "id": 101,
+        "productName": "Smartphone X",
+        "remainingQuantity": 8,
+        "status": "low",
+        "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 102,
+        "productName": "Laptop Pro",
+        "remainingQuantity": 5,
+        "status": "low",
+        "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 103,
+        "productName": "4K Monitor",
+        "remainingQuantity": 12,
+        "status": "low",
+        "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w-400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 104,
+        "productName": "Tablet Mini",
+        "remainingQuantity": 9,
+        "status": "low",
+        "image": "https://images.unsplash.com/photo-1546054452-26f1b03b6c8a?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1546054452-26f1b03b6c8a?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 105,
+        "productName": "Wireless Earbuds",
+        "remainingQuantity": 15,
+        "status": "medium",
+        "image": "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 106,
+        "productName": "External SSD 1TB",
+        "remainingQuantity": 18,
+        "status": "medium",
+        "image": "https://images.unsplash.com/photo-1581344986785-0b2cb1d591c8?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1581344986785-0b2cb1d591c8?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 107,
+        "productName": "Smart Watch",
+        "remainingQuantity": 22,
+        "status": "medium",
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 108,
+        "productName": "Wireless Charger",
+        "remainingQuantity": 35,
+        "status": "medium",
+        "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 109,
+        "productName": "USB-C Hub",
+        "remainingQuantity": 42,
+        "status": "high",
+        "image": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=100&h=100&fit=crop&crop=center"
+      },
+      {
+        "id": 110,
+        "productName": "Laptop Stand",
+        "remainingQuantity": 58,
+        "status": "high",
+        "image": "https://images.unsplash.com/photo-1586950012036-b957f2c7cbf2?w=400&h=400&fit=crop&crop=center",
+        "thumbnail": "https://images.unsplash.com/photo-1586950012036-b957f2c7cbf2?w=100&h=100&fit=crop&crop=center"
+      }
+    ]
+  },
+  "sidebarMenu": [
+    { "id": 1, "name": "Dashboard", "icon": "dashboard", "path": "/dashboard" },
+    { "id": 2, "name": "Inventory", "icon": "inventory", "path": "/inventory" },
+    { "id": 3, "name": "Reports", "icon": "reports", "path": "/reports" },
+    { "id": 4, "name": "Suppliers", "icon": "suppliers", "path": "/suppliers" },
+    { "id": 5, "name": "Orders", "icon": "orders", "path": "/orders" },
+    {
+      "id": 6,
+      "name": "Manage Store",
+      "icon": "store",
+      "path": "/manage-store"
+    },
+    { "id": 7, "name": "Settings", "icon": "settings", "path": "/settings" }
+  ],
+  "inventory": {
+    "overview": {
+      "categories": {
+        "total": 15,
+        "last7Days": 3,
+        "trend": [
+          { "day": "Mon", "count": 2 },
+          { "day": "Tue", "count": 0 },
+          { "day": "Wed", "count": 1 },
+          { "day": "Thu", "count": 0 },
+          { "day": "Fri", "count": 0 },
+          { "day": "Sat", "count": 0 },
+          { "day": "Sun", "count": 0 }
+        ]
+      },
+      "totalProducts": {
+        "total": 1247,
+        "last7Days": 45,
+        "revenue": 28500,
+        "trend": [
+          { "day": "Mon", "count": 8, "revenue": 4200 },
+          { "day": "Tue", "count": 12, "revenue": 6500 },
+          { "day": "Wed", "count": 5, "revenue": 2800 },
+          { "day": "Thu", "count": 7, "revenue": 3900 },
+          { "day": "Fri", "count": 6, "revenue": 5200 },
+          { "day": "Sat", "count": 4, "revenue": 3100 },
+          { "day": "Sun", "count": 3, "revenue": 2800 }
+        ]
+      },
+      "topSelling": {
+        "last7Days": 28,
+        "cost": 18450,
+        "products": [
+          { "name": "Wireless Headphones", "sold": 15, "cost": 1948.5 },
+          { "name": "Bluetooth Speaker", "sold": 23, "cost": 1839.77 },
+          { "name": "Gaming Mouse", "sold": 31, "cost": 1859.69 },
+          { "name": "Power Bank", "sold": 27, "cost": 1349.73 }
+        ]
+      },
+      "lowStocks": {
+        "ordered": 18,
+        "notInStock": 7,
+        "details": [
+          { "product": "Smartphone X", "status": "ordered", "quantity": 25 },
+          { "product": "Laptop Pro", "status": "ordered", "quantity": 15 },
+          { "product": "4K Monitor", "status": "ordered", "quantity": 20 },
+          { "product": "Tablet Mini", "status": "not in stock", "quantity": 0 },
+          {
+            "product": "Wireless Earbuds Pro",
+            "status": "not in stock",
+            "quantity": 0
+          }
+        ]
+      }
+    },
+    "products": [
+      {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "buyingPrice": 89.99,
+        "sellingPrice": 129.99,
+        "quantity": 56,
+        "threshold": 10,
+        "expiryDate": "2025-06-15",
+        "availability": "In Stock",
+        "category": "Electronics",
+        "sku": "WH-001",
+        "supplier": "TechCorp",
+        "lastUpdated": "2024-01-15"
+      },
+      {
+        "id": 2,
+        "name": "Smartphone X",
+        "buyingPrice": 750.0,
+        "sellingPrice": 899.99,
+        "quantity": 8,
+        "threshold": 15,
+        "expiryDate": null,
+        "availability": "Low Stock",
+        "category": "Electronics",
+        "sku": "SPX-002",
+        "supplier": "MobileTech Inc.",
+        "lastUpdated": "2024-01-14"
+      },
+      {
+        "id": 3,
+        "name": "Laptop Pro",
+        "buyingPrice": 1100.0,
+        "sellingPrice": 1299.99,
+        "quantity": 5,
+        "threshold": 8,
+        "expiryDate": null,
+        "availability": "Low Stock",
+        "category": "Electronics",
+        "sku": "LP-003",
+        "supplier": "CompuWorld",
+        "lastUpdated": "2024-01-13"
+      },
+      {
+        "id": 4,
+        "name": "Bluetooth Speaker",
+        "buyingPrice": 55.0,
+        "sellingPrice": 79.99,
+        "quantity": 89,
+        "threshold": 20,
+        "expiryDate": null,
+        "availability": "In Stock",
+        "category": "Electronics",
+        "sku": "BS-004",
+        "supplier": "AudioTech",
+        "lastUpdated": "2024-01-12"
+      },
+      {
+        "id": 5,
+        "name": "Fitness Tracker",
+        "buyingPrice": 150.0,
+        "sellingPrice": 199.99,
+        "quantity": 67,
+        "threshold": 15,
+        "expiryDate": "2025-12-31",
+        "availability": "In Stock",
+        "category": "Wearables",
+        "sku": "FT-005",
+        "supplier": "FitGear",
+        "lastUpdated": "2024-01-11"
+      },
+      {
+        "id": 6,
+        "name": "4K Monitor",
+        "buyingPrice": 380.0,
+        "sellingPrice": 449.99,
+        "quantity": 12,
+        "threshold": 10,
+        "expiryDate": null,
+        "availability": "Low Stock",
+        "category": "Electronics",
+        "sku": "4KM-006",
+        "supplier": "DisplayTech",
+        "lastUpdated": "2024-01-10"
+      },
+      {
+        "id": 7,
+        "name": "Gaming Mouse",
+        "buyingPrice": 42.0,
+        "sellingPrice": 59.99,
+        "quantity": 125,
+        "threshold": 30,
+        "expiryDate": null,
+        "availability": "In Stock",
+        "category": "Gaming",
+        "sku": "GM-007",
+        "supplier": "GameGear",
+        "lastUpdated": "2024-01-09"
+      },
+      {
+        "id": 8,
+        "name": "Mechanical Keyboard",
+        "buyingPrice": 95.0,
+        "sellingPrice": 129.99,
+        "quantity": 78,
+        "threshold": 20,
+        "expiryDate": null,
+        "availability": "In Stock",
+        "category": "Gaming",
+        "sku": "MK-008",
+        "supplier": "KeyTech",
+        "lastUpdated": "2024-01-08"
+      },
+      {
+        "id": 9,
+        "name": "Power Bank 20000mAh",
+        "buyingPrice": 35.0,
+        "sellingPrice": 49.99,
+        "quantity": 142,
+        "threshold": 40,
+        "expiryDate": "2026-05-20",
+        "availability": "In Stock",
+        "category": "Accessories",
+        "sku": "PB-009",
+        "supplier": "PowerTech",
+        "lastUpdated": "2024-01-07"
+      },
+      {
+        "id": 10,
+        "name": "Webcam HD",
+        "buyingPrice": 65.0,
+        "sellingPrice": 89.99,
+        "quantity": 45,
+        "threshold": 15,
+        "expiryDate": null,
+        "availability": "In Stock",
+        "category": "Electronics",
+        "sku": "WC-010",
+        "supplier": "VisionTech",
+        "lastUpdated": "2024-01-06"
+      },
+      {
+        "id": 11,
+        "name": "Wireless Earbuds",
+        "buyingPrice": 45.0,
+        "sellingPrice": 69.99,
+        "quantity": 15,
+        "threshold": 10,
+        "expiryDate": "2025-08-30",
+        "availability": "Low Stock",
+        "category": "Electronics",
+        "sku": "WE-011",
+        "supplier": "AudioTech",
+        "lastUpdated": "2024-01-05"
+      },
+      {
+        "id": 12,
+        "name": "Tablet Mini",
+        "buyingPrice": 320.0,
+        "sellingPrice": 399.99,
+        "quantity": 0,
+        "threshold": 5,
+        "expiryDate": null,
+        "availability": "Out of Stock",
+        "category": "Electronics",
+        "sku": "TM-012",
+        "supplier": "TabTech",
+        "lastUpdated": "2024-01-04"
+      },
+      {
+        "id": 13,
+        "name": "USB-C Hub",
+        "buyingPrice": 28.0,
+        "sellingPrice": 42.99,
+        "quantity": 42,
+        "threshold": 15,
+        "expiryDate": null,
+        "availability": "In Stock",
+        "category": "Accessories",
+        "sku": "UCH-013",
+        "supplier": "ConnectorTech",
+        "lastUpdated": "2024-01-03"
+      },
+      {
+        "id": 14,
+        "name": "Laptop Stand",
+        "buyingPrice": 32.0,
+        "sellingPrice": 49.99,
+        "quantity": 58,
+        "threshold": 20,
+        "expiryDate": null,
+        "availability": "In Stock",
+        "category": "Accessories",
+        "sku": "LS-014",
+        "supplier": "ErgoTech",
+        "lastUpdated": "2024-01-02"
+      },
+      {
+        "id": 15,
+        "name": "External SSD 1TB",
+        "buyingPrice": 85.0,
+        "sellingPrice": 119.99,
+        "quantity": 18,
+        "threshold": 10,
+        "expiryDate": null,
+        "availability": "Medium Stock",
+        "category": "Storage",
+        "sku": "ESSD-015",
+        "supplier": "StorageTech",
+        "lastUpdated": "2024-01-01"
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Electronics",
+        "productCount": 8,
+        "lastAdded": "2024-01-15"
+      },
+      {
+        "id": 2,
+        "name": "Gaming",
+        "productCount": 2,
+        "lastAdded": "2024-01-09"
+      },
+      {
+        "id": 3,
+        "name": "Wearables",
+        "productCount": 1,
+        "lastAdded": "2024-01-11"
+      },
+      {
+        "id": 4,
+        "name": "Accessories",
+        "productCount": 3,
+        "lastAdded": "2024-01-03"
+      },
+      {
+        "id": 5,
+        "name": "Storage",
+        "productCount": 1,
+        "lastAdded": "2024-01-01"
+      }
+    ]
+  },
+  "reports": {
+    "overview": {
+      "totalProfit": 128450,
+      "totalRevenue": 892300,
+      "totalSales": 15420,
+      "netPurchasedValue": 763850,
+      "netSalesValue": 892300,
+      "momProfit": 12.5,
+      "yoyProfit": 18.3,
+      "previousMonthProfit": 114150,
+      "previousYearProfit": 108550
+    },
+    "bestSellingCategories": [
+      {
+        "id": 1,
+        "category": "Electronics",
+        "turnover": 582400,
+        "increasedBy": 15.2,
+        "previousTurnover": 505200,
+        "productCount": 42,
+        "mostSoldProduct": "Wireless Headphones"
+      },
+      {
+        "id": 2,
+        "category": "Gaming",
+        "turnover": 214800,
+        "increasedBy": 22.5,
+        "previousTurnover": 175200,
+        "productCount": 18,
+        "mostSoldProduct": "Gaming Mouse"
+      },
+      {
+        "id": 3,
+        "category": "Wearables",
+        "turnover": 156700,
+        "increasedBy": 8.7,
+        "previousTurnover": 144100,
+        "productCount": 12,
+        "mostSoldProduct": "Fitness Tracker"
+      },
+      {
+        "id": 4,
+        "category": "Accessories",
+        "turnover": 98750,
+        "increasedBy": 18.9,
+        "previousTurnover": 83000,
+        "productCount": 28,
+        "mostSoldProduct": "Power Bank 20000mAh"
+      },
+      {
+        "id": 5,
+        "category": "Storage",
+        "turnover": 74500,
+        "increasedBy": 12.3,
+        "previousTurnover": 66350,
+        "productCount": 9,
+        "mostSoldProduct": "External SSD 1TB"
+      },
+      {
+        "id": 6,
+        "category": "Home Appliances",
+        "turnover": 62100,
+        "increasedBy": 5.8,
+        "previousTurnover": 58700,
+        "productCount": 15,
+        "mostSoldProduct": "Smart Bulb"
+      },
+      {
+        "id": 7,
+        "category": "Office Supplies",
+        "turnover": 43200,
+        "increasedBy": 9.4,
+        "previousTurnover": 39500,
+        "productCount": 22,
+        "mostSoldProduct": "Wireless Mouse"
+      }
+    ],
+    "profitRevenueChart": {
+      "monthly": [
+        { "month": "Jan", "profit": 28400, "revenue": 89200 },
+        { "month": "Feb", "profit": 31200, "revenue": 94500 },
+        { "month": "Mar", "profit": 29800, "revenue": 90100 },
+        { "month": "Apr", "profit": 32500, "revenue": 97800 },
+        { "month": "May", "profit": 36800, "revenue": 105200 },
+        { "month": "Jun", "profit": 34100, "revenue": 98700 },
+        { "month": "Jul", "profit": 38900, "revenue": 112300 },
+        { "month": "Aug", "profit": 37500, "revenue": 108500 },
+        { "month": "Sep", "profit": 35200, "revenue": 102100 },
+        { "month": "Oct", "profit": 41200, "revenue": 118900 },
+        { "month": "Nov", "profit": 44500, "revenue": 125400 },
+        { "month": "Dec", "profit": 51200, "revenue": 142800 }
+      ],
+      "weekly": [
+        { "week": "Week 1", "profit": 10200, "revenue": 31200 },
+        { "week": "Week 2", "profit": 11800, "revenue": 35800 },
+        { "week": "Week 3", "profit": 10800, "revenue": 32800 },
+        { "week": "Week 4", "profit": 12400, "revenue": 37500 }
+      ],
+      "daily": [
+        { "day": "Mon", "profit": 4200, "revenue": 12800 },
+        { "day": "Tue", "profit": 5100, "revenue": 15500 },
+        { "day": "Wed", "profit": 4500, "revenue": 13800 },
+        { "day": "Thu", "profit": 5200, "revenue": 15900 },
+        { "day": "Fri", "profit": 5800, "revenue": 17500 },
+        { "day": "Sat", "profit": 6200, "revenue": 18900 },
+        { "day": "Sun", "profit": 3800, "revenue": 11800 }
+      ]
+    },
+    "bestSellingProducts": [
+      {
+        "id": 1,
+        "productName": "Wireless Headphones",
+        "productId": "WH-001",
+        "category": "Electronics",
+        "remainingQuantity": 56,
+        "turnover": 31848,
+        "increaseBy": 18.5,
+        "soldQuantity": 245,
+        "averagePrice": 129.99,
+        "previousTurnover": 26850
+      },
+      {
+        "id": 2,
+        "productName": "Gaming Mouse",
+        "productId": "GM-007",
+        "category": "Gaming",
+        "remainingQuantity": 125,
+        "turnover": 25377,
+        "increaseBy": 25.3,
+        "soldQuantity": 423,
+        "averagePrice": 59.99,
+        "previousTurnover": 20250
+      },
+      {
+        "id": 3,
+        "productName": "Power Bank 20000mAh",
+        "productId": "PB-009",
+        "category": "Accessories",
+        "remainingQuantity": 142,
+        "turnover": 17794,
+        "increaseBy": 22.7,
+        "soldQuantity": 356,
+        "averagePrice": 49.99,
+        "previousTurnover": 14498
+      },
+      {
+        "id": 4,
+        "productName": "Bluetooth Speaker",
+        "productId": "BS-004",
+        "category": "Electronics",
+        "remainingQuantity": 89,
+        "turnover": 24960,
+        "increaseBy": 15.8,
+        "soldQuantity": 312,
+        "averagePrice": 79.99,
+        "previousTurnover": 21550
+      },
+      {
+        "id": 5,
+        "productName": "Fitness Tracker",
+        "productId": "FT-005",
+        "category": "Wearables",
+        "remainingQuantity": 67,
+        "turnover": 55597,
+        "increaseBy": 12.4,
+        "soldQuantity": 278,
+        "averagePrice": 199.99,
+        "previousTurnover": 49450
+      },
+      {
+        "id": 6,
+        "productName": "Mechanical Keyboard",
+        "productId": "MK-008",
+        "category": "Gaming",
+        "remainingQuantity": 78,
+        "turnover": 37307,
+        "increaseBy": 19.2,
+        "soldQuantity": 287,
+        "averagePrice": 129.99,
+        "previousTurnover": 31280
+      },
+      {
+        "id": 7,
+        "productName": "Smartphone X",
+        "productId": "SPX-002",
+        "category": "Electronics",
+        "remainingQuantity": 8,
+        "turnover": 170098,
+        "increaseBy": 8.9,
+        "soldQuantity": 189,
+        "averagePrice": 899.99,
+        "previousTurnover": 156150
+      },
+      {
+        "id": 8,
+        "productName": "Webcam HD",
+        "productId": "WC-010",
+        "category": "Electronics",
+        "remainingQuantity": 45,
+        "turnover": 17818,
+        "increaseBy": 17.5,
+        "soldQuantity": 198,
+        "averagePrice": 89.99,
+        "previousTurnover": 15165
+      },
+      {
+        "id": 9,
+        "productName": "4K Monitor",
+        "productId": "4KM-006",
+        "category": "Electronics",
+        "remainingQuantity": 12,
+        "turnover": 60299,
+        "increaseBy": 14.6,
+        "soldQuantity": 134,
+        "averagePrice": 449.99,
+        "previousTurnover": 52600
+      },
+      {
+        "id": 10,
+        "productName": "External SSD 1TB",
+        "productId": "ESSD-015",
+        "category": "Storage",
+        "remainingQuantity": 18,
+        "turnover": 21598,
+        "increaseBy": 21.8,
+        "soldQuantity": 180,
+        "averagePrice": 119.99,
+        "previousTurnover": 17720
+      },
+      {
+        "id": 11,
+        "productName": "Wireless Earbuds",
+        "productId": "WE-011",
+        "category": "Electronics",
+        "remainingQuantity": 15,
+        "turnover": 10499,
+        "increaseBy": 11.2,
+        "soldQuantity": 150,
+        "averagePrice": 69.99,
+        "previousTurnover": 9440
+      },
+      {
+        "id": 12,
+        "productName": "Laptop Pro",
+        "productId": "LP-003",
+        "category": "Electronics",
+        "remainingQuantity": 5,
+        "turnover": 202799,
+        "increaseBy": 7.5,
+        "soldQuantity": 156,
+        "averagePrice": 1299.99,
+        "previousTurnover": 188650
+      }
+    ],
+    "reportFilters": {
+      "dateRanges": [
+        "Today",
+        "Yesterday",
+        "Last 7 Days",
+        "Last 30 Days",
+        "This Month",
+        "Last Month",
+        "This Year",
+        "Last Year"
+      ],
+      "categories": [
+        "All",
+        "Electronics",
+        "Gaming",
+        "Wearables",
+        "Accessories",
+        "Storage",
+        "Home Appliances",
+        "Office Supplies"
+      ],
+      "sortBy": ["Turnover", "Increase %", "Quantity Sold", "Revenue", "Profit"]
+    }
+  },
+  "suppliers": {
+    "suppliers": [
+      {
+        "id": 1,
+        "supplierName": "TechCorp",
+        "product": "Wireless Headphones, Webcams",
+        "contactNumber": "+1 (555) 123-4567",
+        "email": "contact@techcorp.com",
+        "type": "Electronics Manufacturer",
+        "onTheWay": 150,
+        "rating": 4.8,
+        "leadTime": "3-5 days",
+        "address": "123 Tech Street, San Francisco, CA",
+        "lastOrderDate": "2024-01-15"
+      },
+      {
+        "id": 2,
+        "supplierName": "MobileTech Inc.",
+        "product": "Smartphones, Tablets",
+        "contactNumber": "+1 (555) 234-5678",
+        "email": "orders@mobiletech.com",
+        "type": "Mobile Devices",
+        "onTheWay": 25,
+        "rating": 4.5,
+        "leadTime": "5-7 days",
+        "address": "456 Mobile Ave, Austin, TX",
+        "lastOrderDate": "2024-01-14"
+      },
+      {
+        "id": 3,
+        "supplierName": "CompuWorld",
+        "product": "Laptops, Monitors",
+        "contactNumber": "+1 (555) 345-6789",
+        "email": "sales@compuworld.com",
+        "type": "Computer Hardware",
+        "onTheWay": 15,
+        "rating": 4.7,
+        "leadTime": "7-10 days",
+        "address": "789 Computer Blvd, Seattle, WA",
+        "lastOrderDate": "2024-01-13"
+      },
+      {
+        "id": 4,
+        "supplierName": "AudioTech",
+        "product": "Speakers, Earbuds, Headphones",
+        "contactNumber": "+1 (555) 456-7890",
+        "email": "info@audiotech.com",
+        "type": "Audio Equipment",
+        "onTheWay": 200,
+        "rating": 4.6,
+        "leadTime": "2-4 days",
+        "address": "321 Sound Street, Los Angeles, CA",
+        "lastOrderDate": "2024-01-12"
+      },
+      {
+        "id": 5,
+        "supplierName": "FitGear",
+        "product": "Fitness Trackers, Smart Watches",
+        "contactNumber": "+1 (555) 567-8901",
+        "email": "sales@fitgear.com",
+        "type": "Wearables",
+        "onTheWay": 75,
+        "rating": 4.4,
+        "leadTime": "4-6 days",
+        "address": "654 Fitness Road, Denver, CO",
+        "lastOrderDate": "2024-01-11"
+      },
+      {
+        "id": 6,
+        "supplierName": "DisplayTech",
+        "product": "Monitors, Screens",
+        "contactNumber": "+1 (555) 678-9012",
+        "email": "orders@displaytech.com",
+        "type": "Display Manufacturer",
+        "onTheWay": 20,
+        "rating": 4.9,
+        "leadTime": "10-14 days",
+        "address": "987 Display Drive, Portland, OR",
+        "lastOrderDate": "2024-01-10"
+      },
+      {
+        "id": 7,
+        "supplierName": "GameGear",
+        "product": "Gaming Mice, Keyboards",
+        "contactNumber": "+1 (555) 789-0123",
+        "email": "support@gamegear.com",
+        "type": "Gaming Accessories",
+        "onTheWay": 300,
+        "rating": 4.3,
+        "leadTime": "3-5 days",
+        "address": "147 Gaming Lane, Las Vegas, NV",
+        "lastOrderDate": "2024-01-09"
+      },
+      {
+        "id": 8,
+        "supplierName": "KeyTech",
+        "product": "Keyboards, Mouse",
+        "contactNumber": "+1 (555) 890-1234",
+        "email": "contact@keytech.com",
+        "type": "Input Devices",
+        "onTheWay": 120,
+        "rating": 4.7,
+        "leadTime": "5-7 days",
+        "address": "258 Key Street, Chicago, IL",
+        "lastOrderDate": "2024-01-08"
+      },
+      {
+        "id": 9,
+        "supplierName": "PowerTech",
+        "product": "Power Banks, Chargers",
+        "contactNumber": "+1 (555) 901-2345",
+        "email": "orders@powertech.com",
+        "type": "Power Solutions",
+        "onTheWay": 250,
+        "rating": 4.5,
+        "leadTime": "2-3 days",
+        "address": "369 Power Ave, Phoenix, AZ",
+        "lastOrderDate": "2024-01-07"
+      },
+      {
+        "id": 10,
+        "supplierName": "VisionTech",
+        "product": "Webcams, Cameras",
+        "contactNumber": "+1 (555) 012-3456",
+        "email": "sales@visiontech.com",
+        "type": "Imaging Equipment",
+        "onTheWay": 85,
+        "rating": 4.6,
+        "leadTime": "4-6 days",
+        "address": "741 Vision Blvd, Miami, FL",
+        "lastOrderDate": "2024-01-06"
+      },
+      {
+        "id": 11,
+        "supplierName": "TabTech",
+        "product": "Tablets, E-Readers",
+        "contactNumber": "+1 (555) 112-2334",
+        "email": "info@tabtech.com",
+        "type": "Tablet Manufacturer",
+        "onTheWay": 0,
+        "rating": 4.2,
+        "leadTime": "7-14 days",
+        "address": "852 Tablet Road, Dallas, TX",
+        "lastOrderDate": "2024-01-04"
+      },
+      {
+        "id": 12,
+        "supplierName": "ConnectorTech",
+        "product": "USB Hubs, Cables",
+        "contactNumber": "+1 (555) 223-3445",
+        "email": "orders@connectortech.com",
+        "type": "Connectivity Solutions",
+        "onTheWay": 180,
+        "rating": 4.8,
+        "leadTime": "3-5 days",
+        "address": "963 Cable Street, Atlanta, GA",
+        "lastOrderDate": "2024-01-03"
+      },
+      {
+        "id": 13,
+        "supplierName": "ErgoTech",
+        "product": "Stands, Mounts",
+        "contactNumber": "+1 (555) 334-4556",
+        "email": "support@ergotech.com",
+        "type": "Ergonomic Solutions",
+        "onTheWay": 95,
+        "rating": 4.4,
+        "leadTime": "5-8 days",
+        "address": "159 Ergo Lane, Boston, MA",
+        "lastOrderDate": "2024-01-02"
+      },
+      {
+        "id": 14,
+        "supplierName": "StorageTech",
+        "product": "SSD, Hard Drives",
+        "contactNumber": "+1 (555) 445-5667",
+        "email": "sales@storagetech.com",
+        "type": "Storage Solutions",
+        "onTheWay": 45,
+        "rating": 4.9,
+        "leadTime": "6-9 days",
+        "address": "753 Storage Drive, San Diego, CA",
+        "lastOrderDate": "2024-01-01"
+      }
+    ],
+    "supplierStats": {
+      "totalSuppliers": 14,
+      "activeSuppliers": 12,
+      "inactiveSuppliers": 2,
+      "averageRating": 4.6,
+      "totalOnTheWay": 1520
+    }
+  },
+  "orders": {
+    "overview": {
+      "totalOrders": {
+        "total": 1247,
+        "last7Days": 85,
+        "trend": [
+          { "day": "Mon", "count": 12 },
+          { "day": "Tue", "count": 15 },
+          { "day": "Wed", "count": 10 },
+          { "day": "Thu", "count": 14 },
+          { "day": "Fri", "count": 18 },
+          { "day": "Sat", "count": 9 },
+          { "day": "Sun", "count": 7 }
+        ]
+      },
+      "ordersReceived": {
+        "total": 1189,
+        "last7Days": 78,
+        "revenue": 42850,
+        "trend": [
+          { "day": "Mon", "count": 11, "revenue": 5200 },
+          { "day": "Tue", "count": 14, "revenue": 6800 },
+          { "day": "Wed", "count": 9, "revenue": 4500 },
+          { "day": "Thu", "count": 13, "revenue": 6200 },
+          { "day": "Fri", "count": 17, "revenue": 8500 },
+          { "day": "Sat", "count": 8, "revenue": 4200 },
+          { "day": "Sun", "count": 6, "revenue": 3450 }
+        ]
+      },
+      "totalReturned": {
+        "total": 58,
+        "last7Days": 7,
+        "cost": 2850,
+        "trend": [
+          { "day": "Mon", "count": 1, "cost": 350 },
+          { "day": "Tue", "count": 2, "cost": 850 },
+          { "day": "Wed", "count": 0, "cost": 0 },
+          { "day": "Thu", "count": 1, "cost": 400 },
+          { "day": "Fri", "count": 2, "cost": 900 },
+          { "day": "Sat", "count": 1, "cost": 250 },
+          { "day": "Sun", "count": 0, "cost": 0 }
+        ]
+      },
+      "onTheWay": {
+        "ordered": 42,
+        "cost": 18750,
+        "details": [
+          { "product": "Smartphone X", "quantity": 25, "cost": 18750 },
+          { "product": "Laptop Pro", "quantity": 15, "cost": 16500 },
+          { "product": "4K Monitor", "quantity": 20, "cost": 7600 }
+        ]
+      }
+    },
+    "orders": [
+      {
+        "id": 1,
+        "orderId": "ORD-2024-001",
+        "customerName": "John Smith",
+        "customerEmail": "john.smith@email.com",
+        "contactNumber": "+1 (555) 123-4567",
+        "orderDate": "2024-01-15",
+        "deliveryDate": "2024-01-18",
+        "totalAmount": 329.97,
+        "status": "Delivered",
+        "paymentMethod": "Credit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "123 Main St, New York, NY 10001",
+        "items": [
+          { "product": "Wireless Headphones", "quantity": 2, "price": 129.99 },
+          { "product": "USB-C Hub", "quantity": 1, "price": 42.99 }
+        ]
+      },
+      {
+        "id": 2,
+        "orderId": "ORD-2024-002",
+        "customerName": "Emma Johnson",
+        "customerEmail": "emma.j@email.com",
+        "contactNumber": "+1 (555) 234-5678",
+        "orderDate": "2024-01-14",
+        "deliveryDate": "2024-01-17",
+        "totalAmount": 899.99,
+        "status": "Delivered",
+        "paymentMethod": "PayPal",
+        "paymentStatus": "Paid",
+        "shippingAddress": "456 Oak Ave, Los Angeles, CA 90001",
+        "items": [{ "product": "Smartphone X", "quantity": 1, "price": 899.99 }]
+      },
+      {
+        "id": 3,
+        "orderId": "ORD-2024-003",
+        "customerName": "Michael Brown",
+        "customerEmail": "michael.b@email.com",
+        "contactNumber": "+1 (555) 345-6789",
+        "orderDate": "2024-01-13",
+        "deliveryDate": "2024-01-20",
+        "totalAmount": 1799.98,
+        "status": "On the Way",
+        "paymentMethod": "Credit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "789 Pine St, Chicago, IL 60601",
+        "items": [
+          { "product": "Laptop Pro", "quantity": 1, "price": 1299.99 },
+          { "product": "Gaming Mouse", "quantity": 2, "price": 59.99 }
+        ]
+      },
+      {
+        "id": 4,
+        "orderId": "ORD-2024-004",
+        "customerName": "Sarah Davis",
+        "customerEmail": "sarah.d@email.com",
+        "contactNumber": "+1 (555) 456-7890",
+        "orderDate": "2024-01-12",
+        "deliveryDate": "2024-01-15",
+        "totalAmount": 159.98,
+        "status": "Delivered",
+        "paymentMethod": "Debit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "321 Elm St, Houston, TX 77001",
+        "items": [
+          { "product": "Bluetooth Speaker", "quantity": 2, "price": 79.99 }
+        ]
+      },
+      {
+        "id": 5,
+        "orderId": "ORD-2024-005",
+        "customerName": "Robert Wilson",
+        "customerEmail": "robert.w@email.com",
+        "contactNumber": "+1 (555) 567-8901",
+        "orderDate": "2024-01-11",
+        "deliveryDate": "2024-01-14",
+        "totalAmount": 399.98,
+        "status": "Delivered",
+        "paymentMethod": "Credit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "654 Maple Dr, Phoenix, AZ 85001",
+        "items": [
+          { "product": "Fitness Tracker", "quantity": 2, "price": 199.99 }
+        ]
+      },
+      {
+        "id": 6,
+        "orderId": "ORD-2024-006",
+        "customerName": "Lisa Anderson",
+        "customerEmail": "lisa.a@email.com",
+        "contactNumber": "+1 (555) 678-9012",
+        "orderDate": "2024-01-10",
+        "deliveryDate": "2024-01-16",
+        "totalAmount": 449.99,
+        "status": "Delivered",
+        "paymentMethod": "PayPal",
+        "paymentStatus": "Paid",
+        "shippingAddress": "987 Cedar Ln, Philadelphia, PA 19101",
+        "items": [{ "product": "4K Monitor", "quantity": 1, "price": 449.99 }]
+      },
+      {
+        "id": 7,
+        "orderId": "ORD-2024-007",
+        "customerName": "David Miller",
+        "customerEmail": "david.m@email.com",
+        "contactNumber": "+1 (555) 789-0123",
+        "orderDate": "2024-01-09",
+        "deliveryDate": "2024-01-12",
+        "totalAmount": 119.98,
+        "status": "Delivered",
+        "paymentMethod": "Credit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "147 Birch Rd, San Antonio, TX 78201",
+        "items": [{ "product": "Gaming Mouse", "quantity": 2, "price": 59.99 }]
+      },
+      {
+        "id": 8,
+        "orderId": "ORD-2024-008",
+        "customerName": "Jessica Taylor",
+        "customerEmail": "jessica.t@email.com",
+        "contactNumber": "+1 (555) 890-1234",
+        "orderDate": "2024-01-08",
+        "deliveryDate": "2024-01-15",
+        "totalAmount": 129.99,
+        "status": "Delivered",
+        "paymentMethod": "Debit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "258 Walnut St, San Diego, CA 92101",
+        "items": [
+          { "product": "Mechanical Keyboard", "quantity": 1, "price": 129.99 }
+        ]
+      },
+      {
+        "id": 9,
+        "orderId": "ORD-2024-009",
+        "customerName": "William Thomas",
+        "customerEmail": "william.t@email.com",
+        "contactNumber": "+1 (555) 901-2345",
+        "orderDate": "2024-01-07",
+        "deliveryDate": "2024-01-19",
+        "totalAmount": 99.98,
+        "status": "On the Way",
+        "paymentMethod": "Credit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "369 Spruce Ave, Dallas, TX 75201",
+        "items": [
+          { "product": "Power Bank 20000mAh", "quantity": 2, "price": 49.99 }
+        ]
+      },
+      {
+        "id": 10,
+        "orderId": "ORD-2024-010",
+        "customerName": "Amanda Moore",
+        "customerEmail": "amanda.m@email.com",
+        "contactNumber": "+1 (555) 012-3456",
+        "orderDate": "2024-01-06",
+        "deliveryDate": "2024-01-09",
+        "totalAmount": 89.99,
+        "status": "Returned",
+        "paymentMethod": "PayPal",
+        "paymentStatus": "Refunded",
+        "shippingAddress": "741 Fir St, San Jose, CA 95101",
+        "items": [{ "product": "Webcam HD", "quantity": 1, "price": 89.99 }]
+      },
+      {
+        "id": 11,
+        "orderId": "ORD-2024-011",
+        "customerName": "James Jackson",
+        "customerEmail": "james.j@email.com",
+        "contactNumber": "+1 (555) 112-2334",
+        "orderDate": "2024-01-05",
+        "deliveryDate": "2024-01-11",
+        "totalAmount": 209.97,
+        "status": "Delivered",
+        "paymentMethod": "Credit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "852 Poplar Dr, Austin, TX 73301",
+        "items": [
+          { "product": "Wireless Earbuds", "quantity": 3, "price": 69.99 }
+        ]
+      },
+      {
+        "id": 12,
+        "orderId": "ORD-2024-012",
+        "customerName": "Olivia White",
+        "customerEmail": "olivia.w@email.com",
+        "contactNumber": "+1 (555) 223-3445",
+        "orderDate": "2024-01-04",
+        "deliveryDate": "2024-01-10",
+        "totalAmount": 399.99,
+        "status": "Cancelled",
+        "paymentMethod": "Credit Card",
+        "paymentStatus": "Refunded",
+        "shippingAddress": "963 Ash St, Jacksonville, FL 32201",
+        "items": [{ "product": "Tablet Mini", "quantity": 1, "price": 399.99 }]
+      },
+      {
+        "id": 13,
+        "orderId": "ORD-2024-013",
+        "customerName": "Daniel Harris",
+        "customerEmail": "daniel.h@email.com",
+        "contactNumber": "+1 (555) 334-4556",
+        "orderDate": "2024-01-03",
+        "deliveryDate": "2024-01-08",
+        "totalAmount": 85.98,
+        "status": "Delivered",
+        "paymentMethod": "Debit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "159 Beech Ln, Indianapolis, IN 46201",
+        "items": [{ "product": "USB-C Hub", "quantity": 2, "price": 42.99 }]
+      },
+      {
+        "id": 14,
+        "orderId": "ORD-2024-014",
+        "customerName": "Sophia Martin",
+        "customerEmail": "sophia.m@email.com",
+        "contactNumber": "+1 (555) 445-5667",
+        "orderDate": "2024-01-02",
+        "deliveryDate": "2024-01-07",
+        "totalAmount": 99.98,
+        "status": "Delivered",
+        "paymentMethod": "PayPal",
+        "paymentStatus": "Paid",
+        "shippingAddress": "753 Willow Way, Columbus, OH 43201",
+        "items": [{ "product": "Laptop Stand", "quantity": 2, "price": 49.99 }]
+      },
+      {
+        "id": 15,
+        "orderId": "ORD-2024-015",
+        "customerName": "Christopher Thompson",
+        "customerEmail": "chris.t@email.com",
+        "contactNumber": "+1 (555) 556-6778",
+        "orderDate": "2024-01-01",
+        "deliveryDate": "2024-01-06",
+        "totalAmount": 239.98,
+        "status": "Delivered",
+        "paymentMethod": "Credit Card",
+        "paymentStatus": "Paid",
+        "shippingAddress": "951 Redwood Blvd, Charlotte, NC 28201",
+        "items": [
+          { "product": "External SSD 1TB", "quantity": 2, "price": 119.99 }
+        ]
+      }
+    ],
+    "orderStats": {
+      "totalRevenue": 523850,
+      "averageOrderValue": 420.18,
+      "deliveryRate": 95.3,
+      "returnRate": 4.7,
+      "cancellationRate": 1.2
+    }
+  },
+  "manageStore": {
+    "stores": [
+      {
+        "id": 1,
+        "storeName": "Tech Haven Downtown",
+        "storeAddress": "123 Tech Street, San Francisco, CA 94102",
+        "phoneNumber": "+1 (415) 555-1234",
+        "manager": "Alex Johnson",
+        "email": "downtown@techhaven.com",
+        "openingHours": "9:00 AM - 9:00 PM",
+        "established": "2018-05-15",
+        "status": "Active",
+        "totalProducts": 850,
+        "monthlyRevenue": 125000
+      },
+      {
+        "id": 2,
+        "storeName": "Tech Haven Midtown",
+        "storeAddress": "456 Innovation Ave, New York, NY 10001",
+        "phoneNumber": "+1 (212) 555-5678",
+        "manager": "Sarah Williams",
+        "email": "midtown@techhaven.com",
+        "openingHours": "10:00 AM - 10:00 PM",
+        "established": "2019-08-22",
+        "status": "Active",
+        "totalProducts": 720,
+        "monthlyRevenue": 98000
+      },
+      {
+        "id": 3,
+        "storeName": "Tech Haven Lakeside",
+        "storeAddress": "789 Lakeview Blvd, Chicago, IL 60601",
+        "phoneNumber": "+1 (312) 555-9012",
+        "manager": "Michael Chen",
+        "email": "lakeside@techhaven.com",
+        "openingHours": "9:30 AM - 8:30 PM",
+        "established": "2020-03-10",
+        "status": "Active",
+        "totalProducts": 650,
+        "monthlyRevenue": 85000
+      },
+      {
+        "id": 4,
+        "storeName": "Tech Haven Plaza",
+        "storeAddress": "321 Digital Drive, Los Angeles, CA 90001",
+        "phoneNumber": "+1 (213) 555-3456",
+        "manager": "Emily Rodriguez",
+        "email": "plaza@techhaven.com",
+        "openingHours": "10:00 AM - 9:00 PM",
+        "established": "2017-11-05",
+        "status": "Active",
+        "totalProducts": 920,
+        "monthlyRevenue": 145000
+      },
+      {
+        "id": 5,
+        "storeName": "Tech Haven Westgate",
+        "storeAddress": "654 Silicon Street, Seattle, WA 98101",
+        "phoneNumber": "+1 (206) 555-7890",
+        "manager": "David Kim",
+        "email": "westgate@techhaven.com",
+        "openingHours": "9:00 AM - 8:00 PM",
+        "established": "2021-06-18",
+        "status": "Active",
+        "totalProducts": 580,
+        "monthlyRevenue": 72000
+      },
+      {
+        "id": 6,
+        "storeName": "Tech Haven Riverfront",
+        "storeAddress": "987 Circuit Road, Austin, TX 73301",
+        "phoneNumber": "+1 (512) 555-2345",
+        "manager": "Jennifer Lee",
+        "email": "riverfront@techhaven.com",
+        "openingHours": "10:00 AM - 9:00 PM",
+        "established": "2019-02-14",
+        "status": "Active",
+        "totalProducts": 690,
+        "monthlyRevenue": 89000
+      },
+      {
+        "id": 7,
+        "storeName": "Tech Haven Uptown",
+        "storeAddress": "147 Byte Avenue, Boston, MA 02101",
+        "phoneNumber": "+1 (617) 555-6789",
+        "manager": "Robert Davis",
+        "email": "uptown@techhaven.com",
+        "openingHours": "9:00 AM - 7:30 PM",
+        "established": "2022-01-30",
+        "status": "Active",
+        "totalProducts": 520,
+        "monthlyRevenue": 68000
+      },
+      {
+        "id": 8,
+        "storeName": "Tech Haven Mall",
+        "storeAddress": "258 Chip Lane, Miami, FL 33101",
+        "phoneNumber": "+1 (305) 555-0123",
+        "manager": "Lisa Thompson",
+        "email": "mall@techhaven.com",
+        "openingHours": "10:00 AM - 10:00 PM",
+        "established": "2018-09-12",
+        "status": "Active",
+        "totalProducts": 810,
+        "monthlyRevenue": 112000
+      },
+      {
+        "id": 9,
+        "storeName": "Tech Haven Central",
+        "storeAddress": "369 Data Drive, Denver, CO 80201",
+        "phoneNumber": "+1 (303) 555-4567",
+        "manager": "Thomas Wilson",
+        "email": "central@techhaven.com",
+        "openingHours": "9:30 AM - 8:00 PM",
+        "established": "2020-07-25",
+        "status": "Active",
+        "totalProducts": 610,
+        "monthlyRevenue": 78000
+      },
+      {
+        "id": 10,
+        "storeName": "Tech Haven Norths",
+        "storeAddress": "741 Pixel Parkway, Atlanta, GA 30301",
+        "phoneNumber": "+1 (404) 555-8901",
+        "manager": "Patricia Brown",
+        "email": "northside@techhaven.com",
+        "openingHours": "9:00 AM - 9:00 PM",
+        "established": "2021-04-08",
+        "status": "Active",
+        "totalProducts": 670,
+        "monthlyRevenue": 83000
+      }
+    ],
+    "storeStats": {
+      "totalStores": 10,
+      "activeStores": 10,
+      "totalMonthlyRevenue": 947000,
+      "averageRevenuePerStore": 94700,
+      "totalProductsAcrossStores": 7020,
+      "averageProductsPerStore": 702
+    }
+  },
+  "settings": []
+}
