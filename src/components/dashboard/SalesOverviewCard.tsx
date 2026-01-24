@@ -14,7 +14,7 @@ const SalesOverviewCard = ({ data }: any) => {
           <span className="bg-blue-100 p-1 rounded-sm">
             <Image src={salesIcon} alt="salesicon" />
           </span>
-          <span className="w-full flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-8">
+          <span className="w-full flex flex-col xl:flex-row justify-center items-center gap-2 xl:gap-8">
             <span>${data?.sales}</span>
             <span className="text-gray-500">Sales</span>
           </span>
@@ -22,9 +22,9 @@ const SalesOverviewCard = ({ data }: any) => {
         <div className="hidden lg:inline-block h-full w-1 self-stretch bg-neutral-300 dark:bg-white/10"></div>
         <div className="flex flex-col justify-center items-center  w-full gap-4">
           <span className="bg-violet-100 p-1 rounded-sm">
-            <Image src={revenueIcon} alt="salesicon" />
+            <Image src={revenueIcon} alt="revenueicon" />
           </span>
-          <span className="w-full flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-8">
+          <span className="w-full flex flex-col xl:flex-row justify-center items-center gap-2 xl:gap-8">
             <span>${data?.revenue}</span>
             <span className="text-gray-500">Revenue</span>
           </span>
@@ -32,9 +32,9 @@ const SalesOverviewCard = ({ data }: any) => {
         <div className="hidden lg:inline-block h-full w-1 self-stretch bg-neutral-300 dark:bg-white/10"></div>
         <div className="flex flex-col justify-center items-center  w-full gap-4">
           <span className="bg-orange-100 p-1 rounded-sm">
-            <Image src={profitIcon} alt="salesicon" />
+            <Image src={profitIcon} alt="profiticon" />
           </span>
-          <span className="w-full flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-8">
+          <span className="w-full flex flex-col xl:flex-row justify-center items-center gap-2 xl:gap-8">
             <span>${data?.profit}</span>
             <span className="text-gray-500">Profit</span>
           </span>
@@ -42,9 +42,9 @@ const SalesOverviewCard = ({ data }: any) => {
         <div className="hidden lg:inline-block h-full  w-1 self-stretch bg-neutral-300 dark:bg-white/10"></div>
         <div className="flex flex-col justify-center items-center border-green-600 w-full gap-4">
           <span className="bg-green-100 p-1 rounded-sm">
-            <Image src={costIcon} alt="salesicon" />
+            <Image src={costIcon} alt="consticon" />
           </span>
-          <span className="w-full flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-8">
+          <span className="w-full flex flex-col xl:flex-row justify-center items-center gap-2 xl:gap-8">
             <span>${data?.cost}</span>
             <span className="text-gray-500">Cost</span>
           </span>

@@ -12,9 +12,9 @@ const PurchaseOverviewCard = ({ data }: any) => {
       <div className="flex flex-row justify-between h-[80%] flex-auto font-semibold">
         <div className="flex flex-col justify-center items-center w-full gap-4 text-center">
           <span className="bg-sky-100 p-1 rounded-sm">
-            <Image src={purchaseIcon} alt="salesicon" />
+            <Image src={purchaseIcon} alt="purchaseicon" />
           </span>
-          <span className="w-full flex flex-col lg:flex-row justify-center lg:gap-8">
+          <span className="w-full flex flex-col xl:flex-row justify-center xl:gap-8">
             <span>{data?.purchases}</span>
             <span className="text-gray-500">Purchase</span>
           </span>
@@ -22,9 +22,9 @@ const PurchaseOverviewCard = ({ data }: any) => {
         <div className="hidden lg:inline-block h-full w-1 self-stretch bg-neutral-300 dark:bg-white/10"></div>
         <div className="flex flex-col justify-center items-center  w-full gap-4 text-center">
           <span className="bg-green-100 p-1 rounded-sm">
-            <Image src={costIcon} alt="salesicon" />
+            <Image src={costIcon} alt="costiconx" />
           </span>
-          <span className="w-full flex flex-col lg:flex-row justify-center lg:gap-8">
+          <span className="w-full flex flex-col xl:flex-row justify-center xl:gap-8">
             <span>${data?.cost}</span>
             <span className="text-gray-500">Cost</span>
           </span>
@@ -32,9 +32,9 @@ const PurchaseOverviewCard = ({ data }: any) => {
         <div className="hidden lg:inline-block h-full w-1 self-stretch bg-neutral-300 dark:bg-white/10"></div>
         <div className="flex flex-col justify-center items-center  w-full gap-4 text-center">
           <span className="bg-violet-100 p-1 rounded-sm">
-            <Image src={cancelIcon} alt="salesicon" />
+            <Image src={cancelIcon} alt="cancelicon" />
           </span>
-          <span className="w-full flex flex-col lg:flex-row justify-center lg:gap-8">
+          <span className="w-full flex flex-col xl:flex-row justify-center xl:gap-8">
             <span>{data?.cancel}</span>
             <span className="text-gray-500">Cancel</span>
           </span>
@@ -42,9 +42,9 @@ const PurchaseOverviewCard = ({ data }: any) => {
         <div className="hidden lg:inline-block h-full  w-1 self-stretch bg-neutral-300 dark:bg-white/10"></div>
         <div className="flex flex-col justify-center items-center border-green-600 w-full gap-4 text-center">
           <span className="bg-orange-100 p-1 rounded-sm">
-            <Image src={profitIcon} alt="salesicon" />
+            <Image src={profitIcon} alt="profiticon" />
           </span>
-          <span className="w-full flex flex-col lg:flex-row justify-center lg:gap-8">
+          <span className="w-full flex flex-col xl:flex-row justify-center xl:gap-8">
             <span>${data?.return}</span>
             <span className="text-gray-500">Return</span>
           </span>

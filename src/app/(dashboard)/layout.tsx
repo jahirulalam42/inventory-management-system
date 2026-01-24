@@ -35,7 +35,7 @@ export default function RootLayout({
             <AppSidebar />
             <main className="w-full flex flex-col min-h-screen">
               <Header />
-              <div className="mx-1 lg:mx-8">{children}</div>
+              <div className="mx-1 my-4 xl:mx-8">{children}</div>
             </main>
           </SidebarProvider>
         </div>

@@ -62,7 +62,7 @@ const OrderChart = ({ data }: any) => {
   };
 
   return (
-    <div className="w-full h-90 bg-white rounded-sm p-6">
+    <div className="w-full h-90 bg-white rounded-sm py-6 lg:p-6">
       <h1 className=" flex-auto text-xl">Order Summary</h1>
 
       <div className="w-full h-full py-2 flex justify-center items-center flex-auto">
