@@ -20,3 +20,30 @@ export const topSellingColumns: ColumnDef<any>[] = [
     header: "Price",
   },
 ];
+
+export const inventoryProductsColumns: ColumnDef<any>[] = [
+  {
+    accessorKey: "name",
+    header: "Products",
+  },
+  {
+    accessorKey: "buyingPrice",
+    header: "Buying Price",
+  },
+  {
+    accessorKey: "quantity",
+    header: "Quantity",
+  },
+  {
+    accessorKey: "threshold",
+    header: "Threshold Value",
+  },
+  {
+    accessorKey: "expiryDate",
+    header: "Expiry Date",
+  },
+  {
+    accessorKey: "availability",
+    header: "Availablility",
+  },
+];
