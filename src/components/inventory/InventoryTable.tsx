@@ -68,7 +68,7 @@ const InventoryTable = ({ categories, products }: any) => {
     <div className="w-full h-fit bg-white rounded-sm p-6">
       <div className="w-full flex flex-col lg:flex-row gap-4 justify-between">
         <h1 className="text-xl">Products</h1>
-        <div className="grid grid-flow-row grid-cols-2 lg:grid-flow-col gap-4">
+        <div className="grid grid-flow-row grid-cols-2 lg:grid-flow-col lg:grid-rows-1 gap-4">
           <div>
             <Dialog>
               <DialogTrigger asChild>
@@ -229,7 +229,7 @@ const InventoryTable = ({ categories, products }: any) => {
                 <SelectLabel>Filters</SelectLabel>
 
                 <SelectItem value="all" defaultValue={"all"}>
-                  All Products
+                  Filters
                 </SelectItem>
 
                 {categories?.map((category: any) => {
