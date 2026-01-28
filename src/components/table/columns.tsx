@@ -45,5 +45,24 @@ export const inventoryProductsColumns: ColumnDef<any>[] = [
   {
     accessorKey: "availability",
     header: "Availablility",
+    cell: ({ row }) => {
+      const availability = row.getValue("availability") as string;
+
+      return (
+        <span
+          className={
+            availability === "In Stock"
+              ? "text-green-600 font-semibold"
+              : availability === "Out of Stock"
+              ? "text-red-600 font-semibold"
+              : availability === "Medium Stock"
+              ? "text-blue-600 font-semibold"
+              : "text-yellow-600 font-semibold"
+          }
+        >
+          {availability}
+        </span>
+      );
+    },
   },
 ];
