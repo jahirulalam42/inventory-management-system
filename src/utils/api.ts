@@ -17,3 +17,12 @@ export async function getInventoryData() {
     console.error(error);
   }
 }
+
+export async function getReportsData() {
+  try {
+    const response = await axios.get("http://localhost:4000/reports");
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}

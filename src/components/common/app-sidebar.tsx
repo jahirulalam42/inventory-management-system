@@ -38,7 +38,7 @@ const items = [
   },
   {
     title: "Reports",
-    url: "#",
+    url: "/reports",
     icon: FileChartColumnIncreasing,
   },
   {

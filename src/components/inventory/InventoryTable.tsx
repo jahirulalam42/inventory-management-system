@@ -24,6 +24,7 @@ import {
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
+import Pagination from "../common/Pagination";
 
 const InventoryTable = ({ categories, products }: any) => {
   console.log("Categories", categories);
@@ -255,30 +256,12 @@ const InventoryTable = ({ categories, products }: any) => {
               columns={inventoryProductsColumns}
               data={currentPageProducts}
             />
-            <div className="w-full flex justify-between gap-4">
-              <Button
-                size={"lg"}
-                variant={"outline"}
-                onClick={() => setCurrentPage((prev) => prev - 1)}
-                className={`${
-                  currentPage === 1 ? "invisible" : "visible"
-                } rounded-none`}
-              >
-                Previous
-              </Button>
-              <span>
-                Page {currentPage} to {allPage}
-              </span>
-              <Button
-                size={"lg"}
-                variant={"outline"}
-                onClick={() => setCurrentPage((prev) => prev + 1)}
-                className={`${
-                  currentPage === Number(allPage) ? "invisible" : "visible"
-                } rounded-none`}
-              >
-                Next
-              </Button>
+            <div>
+              <Pagination
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                allPage={allPage}
+              />
             </div>
           </div>
         )}
