@@ -16,9 +16,9 @@ const page = () => {
   }, []);
   return (
     <div className="">
-      <div className="w-full flex flex-row gap-4">
+      <div className="w-full flex flex-col lg:flex-row gap-4">
         <OverviewCard data={data?.overview} />
-        <BestSellingCategory />
+        <BestSellingCategory data={data?.bestSellingCategories} />
       </div>
     </div>
   );

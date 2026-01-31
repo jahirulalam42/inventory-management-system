@@ -54,15 +54,30 @@ export const inventoryProductsColumns: ColumnDef<any>[] = [
             availability === "In Stock"
               ? "text-green-600 font-semibold"
               : availability === "Out of Stock"
-              ? "text-red-600 font-semibold"
-              : availability === "Medium Stock"
-              ? "text-blue-600 font-semibold"
-              : "text-yellow-600 font-semibold"
+                ? "text-red-600 font-semibold"
+                : availability === "Medium Stock"
+                  ? "text-blue-600 font-semibold"
+                  : "text-yellow-600 font-semibold"
           }
         >
           {availability}
         </span>
       );
     },
+  },
+];
+
+export const bestSellingCategoryColumns: ColumnDef<any>[] = [
+  {
+    accessorKey: "category",
+    header: "Category",
+  },
+  {
+    accessorKey: "previousTurnover",
+    header: "Turn Over",
+  },
+  {
+    accessorKey: "increasedBy",
+    header: "Increase By",
   },
 ];
