@@ -1,16 +1,28 @@
 "use client";
 import React, { useEffect, useState } from "react";
-
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
+  Filler,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Filler,
+  Legend
+);
 
 import {
   Select,
@@ -21,20 +33,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-// import faker from "faker";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-const SalesChart = ({ data }: any) => {
-  // console.log("Data", data);
-
+const ProfitAndRevenue = ({ data }: any) => {
   const [dayValue, setDayValue] = useState("daily");
   const [filteredData, setFilteredData] = useState(data?.daily);
 
@@ -55,9 +55,6 @@ const SalesChart = ({ data }: any) => {
       case "monthly":
         setFilteredData(data?.monthly);
         break;
-      case "yearly":
-        setFilteredData(data?.yearly);
-        break;
     }
   }, [dayValue, data]);
 
@@ -71,45 +68,35 @@ const SalesChart = ({ data }: any) => {
     },
   };
 
-  //   const labels = [
-  //     "January",
-  //     "February",
-  //     "March",
-  //     "April",
-  //     "May",
-  //     "June",
-  //     "July",
-  //   ];
-
   const labels = filteredData?.map((d: any) => {
-    return d?.day || d?.month || d?.week || d?.year;
+    return d?.day || d?.month || d?.week;
   });
 
   const dataSet = {
     labels,
     datasets: [
       {
-        label: "Purchase",
-        data: filteredData?.map((d: any) => {
-          return d?.purchases;
-        }),
-        backgroundColor: "rgba(8, 255, 6, 0.5)",
-        // barThickness: 30,
+        fill: true,
+        label: "Revenue",
+        data: filteredData?.map((d: any) => d?.revenue) || [],
+        borderColor: "rgb(245, 158, 11)", // amber-500
+        backgroundColor: "rgba(245, 158, 11, 0.1)",
       },
+
       {
-        label: "Sales",
-        data: filteredData?.map((d: any) => {
-          return d?.sales;
-        }),
-        backgroundColor: "rgba(0, 20, 217, 0.5)",
-        // barThickness: 40,
+        fill: true,
+        label: "Profit",
+        data: filteredData?.map((d: any) => d?.profit) || [],
+        borderColor: "rgb(56, 189, 248)", // sky-400
+        backgroundColor: "rgba(56, 189, 248, 0.1)",
       },
     ],
   };
   return (
-    <div className="w-full h-90 bg-white rounded-sm py-6 lg:p-6">
-      <div className="flex flex-row justify-between">
-        <h1 className="h-[20%] flex-auto text-xl">Sales & Purchase</h1>
+    <div className="w-full h-96 bg-white rounded-sm p-4 flex flex-col justify-center items-center">
+      <div className="w-full flex flex-row justify-between">
+        <h1 className="text-base lg:text-xl">Profit & Revenue</h1>
+
         <Select onValueChange={handleDayValue} defaultValue="daily">
           <SelectTrigger className="w-full max-w-37.25">
             <SelectValue placeholder="Select Day" />
@@ -120,16 +107,16 @@ const SalesChart = ({ data }: any) => {
               <SelectItem value="daily">Daily</SelectItem>
               <SelectItem value="weekly">Weekly</SelectItem>
               <SelectItem value="monthly">Monthly</SelectItem>
-              <SelectItem value="yearly">Yearly</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
       </div>
-      <div className="w-full h-full py-2 flex justify-center items-center">
-        <Bar options={options} data={dataSet} />
+
+      <div className="w-[98%] h-full py-6 flex justify-center items-center flex-auto">
+        <Line options={options} data={dataSet} />
       </div>
     </div>
   );
 };
 
-export default SalesChart;
+export default ProfitAndRevenue;

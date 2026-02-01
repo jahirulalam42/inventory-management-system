@@ -54,10 +54,10 @@ export const inventoryProductsColumns: ColumnDef<any>[] = [
             availability === "In Stock"
               ? "text-green-600 font-semibold"
               : availability === "Out of Stock"
-                ? "text-red-600 font-semibold"
-                : availability === "Medium Stock"
-                  ? "text-blue-600 font-semibold"
-                  : "text-yellow-600 font-semibold"
+              ? "text-red-600 font-semibold"
+              : availability === "Medium Stock"
+              ? "text-blue-600 font-semibold"
+              : "text-yellow-600 font-semibold"
           }
         >
           {availability}
@@ -79,5 +79,46 @@ export const bestSellingCategoryColumns: ColumnDef<any>[] = [
   {
     accessorKey: "increasedBy",
     header: "Increase By",
+    cell: ({ row }) => {
+      const increasedBy = row.getValue("increasedBy") as string;
+
+      return (
+        <span className="text-green-600 font-semibold">{increasedBy}%</span>
+      );
+    },
+  },
+];
+
+export const bestSellingProductColumns: ColumnDef<any>[] = [
+  {
+    accessorKey: "productName",
+    header: "Product",
+  },
+  {
+    accessorKey: "productId",
+    header: "Product ID",
+  },
+  {
+    accessorKey: "category",
+    header: "Category",
+  },
+  {
+    accessorKey: "remainingQuantity",
+    header: "Remaining Quantity",
+  },
+  {
+    accessorKey: "turnover",
+    header: "Turn Over",
+  },
+  {
+    accessorKey: "increaseBy",
+    header: "Increase By",
+    cell: ({ row }) => {
+      const increasedBy = row.getValue("increaseBy") as string;
+
+      return (
+        <span className="text-green-600 font-semibold">{increasedBy}%</span>
+      );
+    },
   },
 ];

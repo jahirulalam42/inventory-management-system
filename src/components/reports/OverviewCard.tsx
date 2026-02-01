@@ -11,7 +11,7 @@ const OverviewCard = ({ data }: any) => {
     yoyProfit,
   } = data || {};
   return (
-    <div className="flex-1 h-61 w-full lg:w-[50%] bg-white rounded-sm p-2 lg:p-4 flex flex-col gap-2 lg:gap-4">
+    <div className="flex-1 h-61 w-full lg:w-[50%] bg-white rounded-sm p-2 xl:p-4 flex flex-col gap-2 xl:gap-4">
       <h1 className="text-base lg:text-xl">Overview</h1>
       <div className="w-full flex flex-row justify-between gap-2 lg:gap-6">
         <div className="flex flex-col gap-4">
