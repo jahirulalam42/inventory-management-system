@@ -43,7 +43,7 @@ const items = [
   },
   {
     title: "Suppliers",
-    url: "#",
+    url: "/suppliers",
     icon: CircleUser,
   },
   {

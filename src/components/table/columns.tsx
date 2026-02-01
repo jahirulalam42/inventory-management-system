@@ -122,3 +122,30 @@ export const bestSellingProductColumns: ColumnDef<any>[] = [
     },
   },
 ];
+
+export const suppliersColumns: ColumnDef<any>[] = [
+  {
+    accessorKey: "supplierName",
+    header: "Supplier Name",
+  },
+  {
+    accessorKey: "products",
+    header: "Product",
+  },
+  {
+    accessorKey: "contactNumber",
+    header: "Contact Number",
+  },
+  {
+    accessorKey: "email",
+    header: "Email",
+  },
+  {
+    accessorKey: "type",
+    header: "Type",
+  },
+  {
+    accessorKey: "onTheWay",
+    header: "On the way",
+  },
+];

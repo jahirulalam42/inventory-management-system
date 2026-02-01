@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { DataTable } from "../table/data-table";
-import { inventoryProductsColumns } from "../table/columns";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
 import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 import {
   Select,
   SelectContent,
@@ -10,67 +19,51 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
+} from "../ui/select";
+import { DataTable } from "../table/data-table";
+import { suppliersColumns } from "../table/columns";
 import Pagination from "../common/Pagination";
 
-const InventoryTable = ({ categories, products }: any) => {
-  console.log("Categories", categories);
-  console.log("Products", products);
-
-  const [selectValue, setSelectValue] = React.useState<any>("all");
-  const [updateProducts, setUpdateProducts] = useState<any>(products);
+const SuppliersTable = ({ data, filters }: any) => {
+  const [updatedProduct, setUpdatedProduct] = useState<any>(data);
+  const [selectValue, setSelectValue] = useState<any>("all");
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const productPerPage = 20;
+  const allPage = Math.ceil(updatedProduct?.length / productPerPage);
 
+  const startIndex = (currentPage - 1) * productPerPage;
+  const endIndex = startIndex + productPerPage;
+
+  const currentPageProduct = updatedProduct?.slice(startIndex, endIndex);
+
+  const handleSubmit = (e: any) => {
+    console.log("Submitted Event", e);
+  };
   const handleSelect = (value: string) => {
     setSelectValue(value);
     setCurrentPage(1);
   };
 
-  const allPage = Math.ceil(updateProducts?.length / 10);
-
-  const startIndex = (currentPage - 1) * 10;
-  const endIndex = startIndex + 10;
-
-  const currentPageProducts = updateProducts?.slice(startIndex, endIndex);
-  console.log(Number(allPage));
-
-  const handleSubmit = (e: any) => {
-    console.log("Submit value", e);
-  };
-
   useEffect(() => {
-    if (!products) return;
+    if (!data) return;
 
     if (selectValue === "all") {
-      setUpdateProducts(products);
+      setUpdatedProduct(data);
       return;
     }
 
-    const filteredProducts = products?.filter(
-      (product: any) => product?.category === selectValue
+    const filteredProducts = data?.filter(
+      (product: any) => product?.type === selectValue
     );
 
-    setUpdateProducts(filteredProducts);
-  }, [selectValue, products]);
-  // console.log("Select Value", selectValue);
+    setUpdatedProduct(filteredProducts);
+  }, [selectValue, data]);
+
   return (
-    <div className="w-full h-fit bg-white rounded-sm p-6">
-      <div className="w-full flex flex-col lg:flex-row gap-4 justify-between">
+    <div className="w-full h-fit bg-white rounded-sm p-4 flex flex-col gap-2">
+      <div className="w-full flex flex-col md:flex-row gap-4 justify-between">
         <h1 className="text-xl">Products</h1>
-        <div className="grid grid-flow-row grid-cols-2 lg:grid-flow-col lg:grid-rows-1 gap-4">
+        <div className="grid grid-flow-row grid-cols-2 md:grid-cols-3 gap-4">
           <div>
             <Dialog>
               <DialogTrigger asChild>
@@ -223,7 +216,7 @@ const InventoryTable = ({ categories, products }: any) => {
           </div>
 
           <Select onValueChange={handleSelect}>
-            <SelectTrigger size={"sm"} className="w-full rounded-none max-w-48">
+            <SelectTrigger size={"sm"} className="rounded-none w-30">
               <SelectValue placeholder="Filters" />
             </SelectTrigger>
             <SelectContent>
@@ -234,10 +227,10 @@ const InventoryTable = ({ categories, products }: any) => {
                   All
                 </SelectItem>
 
-                {categories?.map((category: any) => {
+                {filters?.map((category: any, index: number) => {
                   return (
-                    <SelectItem key={category?.id} value={category?.name}>
-                      {category?.name}
+                    <SelectItem key={index} value={category}>
+                      {category}
                     </SelectItem>
                   );
                 })}
@@ -250,25 +243,19 @@ const InventoryTable = ({ categories, products }: any) => {
           </Button>
         </div>
       </div>
-      <div className="w-full py-4">
-        {currentPageProducts && (
-          <div className="flex flex-col gap-2">
-            <DataTable
-              columns={inventoryProductsColumns}
-              data={currentPageProducts}
-            />
-            <div>
-              <Pagination
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                allPage={allPage}
-              />
-            </div>
-          </div>
+
+      <div className="w-full flex flex-col gap-2">
+        {currentPageProduct && (
+          <DataTable columns={suppliersColumns} data={currentPageProduct} />
         )}
+        <Pagination
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          allPage={allPage}
+        />
       </div>
     </div>
   );
 };
 
-export default InventoryTable;
+export default SuppliersTable;
