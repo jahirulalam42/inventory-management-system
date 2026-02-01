@@ -23,6 +23,7 @@ import {
 import { DataTable } from "../table/data-table";
 import { suppliersColumns } from "../table/columns";
 import Pagination from "../common/Pagination";
+import { UserRound } from "lucide-react";
 
 const SuppliersTable = ({ data, filters }: any) => {
   const [updatedProduct, setUpdatedProduct] = useState<any>(data);
@@ -53,7 +54,7 @@ const SuppliersTable = ({ data, filters }: any) => {
     }
 
     const filteredProducts = data?.filter(
-      (product: any) => product?.type === selectValue
+      (product: any) => product?.type === selectValue,
     );
 
     setUpdatedProduct(filteredProducts);
@@ -81,12 +82,14 @@ const SuppliersTable = ({ data, filters }: any) => {
                         id="picture"
                         type="file"
                       />
-                      <div className="h-20 w-20 border-2 border-dashed rounded-md flex items-center justify-center bg-slate-50 text-slate-400"></div>
+                      <div className="h-20 w-20 border-2 border-dashed rounded-full flex items-center justify-center bg-slate-50 text-slate-400">
+                        <UserRound className="w-[80%] h-[80%]" />
+                      </div>
                       <div className="text-center pointer-events-none">
                         Drag Image here <br /> or <br />{" "}
                         <Label
                           htmlFor="picture"
-                          className="text-blue-500 cursor-pointer pointer-events-auto font-bold"
+                          className="text-blue-500 cursor-pointer pointer-events-auto font-bold text-center"
                         >
                           Browse Image
                         </Label>
@@ -97,25 +100,25 @@ const SuppliersTable = ({ data, filters }: any) => {
                     {/* Use flex instead of grid for the row */}
                     <div className="flex items-center gap-4">
                       <Label className="w-[30%]" htmlFor="name">
-                        Product Name
+                        Supplier Name
                       </Label>
                       {/* Use flex-1 to tell it to "grow to fill remaining space" */}
                       <Input
                         id="name"
                         name="name"
-                        placeholder="Enter Product Name"
+                        placeholder="Enter supplier Name"
                         className="flex-1"
                       />
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <Label className="w-[30%]" htmlFor="productId">
-                        Product ID
+                      <Label className="w-[30%]" htmlFor="product">
+                        Product
                       </Label>
                       <Input
-                        id="productId"
-                        name="productId"
-                        placeholder="Enter product id"
+                        id="product"
+                        name="product"
+                        placeholder="Enter product"
                         className="flex-1"
                       />
                     </div>
@@ -145,49 +148,32 @@ const SuppliersTable = ({ data, filters }: any) => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <Label className="w-[30%]" htmlFor="quantity">
-                        Quantity
+                      <Label className="w-[30%]" htmlFor="contactNumber">
+                        Contact Number
                       </Label>
                       <Input
-                        id="quantity"
-                        name="quantity"
-                        placeholder="Enter product quantity"
+                        id="contactNumber"
+                        name="contactNumber"
+                        placeholder="Enter supplier contact number"
                         className="flex-1"
                       />
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <Label className="w-[30%]" htmlFor="unit">
-                        Unit
+                      <Label className="w-[30%]" htmlFor="type">
+                        Type
                       </Label>
                       <Input
-                        id="unit"
-                        name="unit"
-                        placeholder="Enter product unit"
+                        id="type"
+                        name="type"
+                        placeholder="Not taking return"
                         className="flex-1"
                       />
-                    </div>
 
-                    <div className="flex items-center gap-4">
-                      <Label className="w-[30%]" htmlFor="expiryDate">
-                        Expiry Date
-                      </Label>
                       <Input
-                        id="expiryDate"
-                        name="expiryDate"
-                        placeholder="Enter expiry date"
-                        className="flex-1"
-                      />
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <Label className="w-[30%]" htmlFor="threshold">
-                        Threshold Value
-                      </Label>
-                      <Input
-                        id="threshold"
-                        name="threshold"
-                        placeholder="Enter threshold value"
+                        id="type"
+                        name="type"
+                        placeholder="Taking return"
                         className="flex-1"
                       />
                     </div>
@@ -207,7 +193,7 @@ const SuppliersTable = ({ data, filters }: any) => {
                       size={"sm"}
                       className="bg-blue-500 rounded-none"
                     >
-                      Add Product
+                      Add Supplier
                     </Button>
                   </DialogFooter>
                 </DialogContent>
