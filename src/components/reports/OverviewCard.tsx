@@ -13,7 +13,7 @@ const OverviewCard = ({ data }: any) => {
   return (
     <div className="flex-1 h-61 w-full lg:w-[50%] bg-white rounded-sm p-2 xl:p-4 flex flex-col gap-2 xl:gap-4">
       <h1 className="text-base lg:text-xl">Overview</h1>
-      <div className="w-full flex flex-row justify-between gap-2 lg:gap-6">
+      <div className="w-full flex flex-row justify-between gap-2 lg:gap-6 font-semibold">
         <div className="flex flex-col gap-4">
           <span className="text-xs md:text-base">${totalProfit}</span>
           <p className="text-xs lg:text-sm text-gray-500">Total Profit</p>
@@ -34,7 +34,7 @@ const OverviewCard = ({ data }: any) => {
         <hr className="h-px my-2 bg-neutral-quaternary border-0.5"></hr>
       </div>
 
-      <div className="w-full flex flex-row justify-between gap-2 lg:gap-6">
+      <div className="w-full flex flex-row justify-between gap-2 lg:gap-6 font-semibold">
         <div className="flex flex-col lg:gap-4">
           <span className="text-xs md:text-base">${netPurchasedValue}</span>
           <p className="text-xs lg:text-sm text-gray-500">Net purchase value</p>

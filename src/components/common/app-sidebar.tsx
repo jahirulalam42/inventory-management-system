@@ -48,7 +48,7 @@ const items = [
   },
   {
     title: "Orders",
-    url: "#",
+    url: "/orders",
     icon: ShoppingBag,
   },
   {

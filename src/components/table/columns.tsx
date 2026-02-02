@@ -149,3 +149,49 @@ export const suppliersColumns: ColumnDef<any>[] = [
     header: "On the way",
   },
 ];
+
+export const ordersColums: ColumnDef<any>[] = [
+  {
+    accessorKey: "product",
+    header: "Products",
+  },
+  {
+    accessorKey: "orderValue",
+    header: "Order Value",
+  },
+  {
+    accessorKey: "quantity",
+    header: "Quantity",
+  },
+  {
+    accessorKey: "orderId",
+    header: "Order ID",
+  },
+  {
+    accessorKey: "expectedDelivery",
+    header: "Expected Delivery",
+  },
+  {
+    accessorKey: "status",
+    header: "Status",
+    cell: ({ row }) => {
+      const availability = row.getValue("status") as string;
+
+      return (
+        <span
+          className={
+            availability === "Delivered"
+              ? "text-green-600 font-semibold"
+              : availability === "Cancelled"
+              ? "text-red-600 font-semibold"
+              : availability === "Returned"
+              ? "text-blue-600 font-semibold"
+              : "text-yellow-600 font-semibold"
+          }
+        >
+          {availability}
+        </span>
+      );
+    },
+  },
+];

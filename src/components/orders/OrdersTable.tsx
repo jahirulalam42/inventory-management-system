@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DataTable } from "../table/data-table";
-import { inventoryProductsColumns } from "../table/columns";
+import { ordersColums } from "../table/columns";
 import { Button } from "../ui/button";
 import {
   Select,
@@ -26,12 +26,9 @@ import { Input } from "../ui/input";
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
 import Pagination from "../common/Pagination";
 
-const InventoryTable = ({ categories, products }: any) => {
-  // console.log("Categories", categories);
-  // console.log("Products", products);
-
+const OrdersTable = ({ categories, orders }: any) => {
   const [selectValue, setSelectValue] = React.useState<any>("all");
-  const [updateProducts, setUpdateProducts] = useState<any>(products);
+  const [updateorders, setUpdateorders] = useState<any>(orders);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handleSelect = (value: string) => {
@@ -39,37 +36,35 @@ const InventoryTable = ({ categories, products }: any) => {
     setCurrentPage(1);
   };
 
-  const allPage = Math.ceil(updateProducts?.length / 10);
+  const allPage = Math.ceil(updateorders?.length / 10);
 
   const startIndex = (currentPage - 1) * 10;
   const endIndex = startIndex + 10;
 
-  const currentPageProducts = updateProducts?.slice(startIndex, endIndex);
-  // console.log(Number(allPage));
+  const currentPageorders = updateorders?.slice(startIndex, endIndex);
 
   const handleSubmit = (e: any) => {
     // console.log("Submit value", e);
   };
 
   useEffect(() => {
-    if (!products) return;
+    if (!orders) return;
 
     if (selectValue === "all") {
-      setUpdateProducts(products);
+      setUpdateorders(orders);
       return;
     }
 
-    const filteredProducts = products?.filter(
+    const filteredorders = orders?.filter(
       (product: any) => product?.category === selectValue
     );
 
-    setUpdateProducts(filteredProducts);
-  }, [selectValue, products]);
-  // console.log("Select Value", selectValue);
+    setUpdateorders(filteredorders);
+  }, [selectValue, orders]);
   return (
     <div className="w-full h-fit bg-white rounded-sm p-6">
       <div className="w-full flex flex-col lg:flex-row gap-4 justify-between">
-        <h1 className="text-xl">Products</h1>
+        <h1 className="text-xl">orders</h1>
         <div className="grid grid-flow-row grid-cols-2 lg:grid-flow-col lg:grid-rows-1 gap-4">
           <div>
             <Dialog>
@@ -81,24 +76,7 @@ const InventoryTable = ({ categories, products }: any) => {
               <form onSubmit={handleSubmit}>
                 <DialogContent className="sm:max-w-[425px]">
                   <DialogHeader>
-                    <DialogTitle>New Product</DialogTitle>
-                    <div className="flex flex-row justify-center items-center gap-4 relative">
-                      <Input
-                        className="opacity-0 absolute inset-0 w-full h-full cursor-pointer z-10"
-                        id="picture"
-                        type="file"
-                      />
-                      <div className="h-20 w-20 border-2 border-dashed rounded-md flex items-center justify-center bg-slate-50 text-slate-400"></div>
-                      <div className="text-center pointer-events-none">
-                        Drag Image here <br /> or <br />{" "}
-                        <Label
-                          htmlFor="picture"
-                          className="text-blue-500 cursor-pointer pointer-events-auto font-bold"
-                        >
-                          Browse Image
-                        </Label>
-                      </div>
-                    </div>
+                    <DialogTitle>New Order</DialogTitle>
                   </DialogHeader>
                   <div className="grid gap-4">
                     {/* Use flex instead of grid for the row */}
@@ -140,13 +118,13 @@ const InventoryTable = ({ categories, products }: any) => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <Label className="w-[30%]" htmlFor="buyingPrice">
-                        Buying Price
+                      <Label className="w-[30%]" htmlFor="orderValue">
+                        Order value
                       </Label>
                       <Input
-                        id="buyingPrice"
-                        name="buyingPrice"
-                        placeholder="Enter buying price"
+                        id="orderValue"
+                        name="orderValue"
+                        placeholder="Enter order value"
                         className="flex-1"
                       />
                     </div>
@@ -176,25 +154,25 @@ const InventoryTable = ({ categories, products }: any) => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <Label className="w-[30%]" htmlFor="expiryDate">
-                        Expiry Date
+                      <Label className="w-[30%]" htmlFor="buyingPrice">
+                        Buying Price
                       </Label>
                       <Input
-                        id="expiryDate"
-                        name="expiryDate"
-                        placeholder="Enter expiry date"
+                        id="buyingPrice"
+                        name="buyingPrice"
+                        placeholder="Enter buying price"
                         className="flex-1"
                       />
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <Label className="w-[30%]" htmlFor="threshold">
-                        Threshold Value
+                      <Label className="w-[30%]" htmlFor="dateOfDelivery">
+                        Date of delivery
                       </Label>
                       <Input
-                        id="threshold"
-                        name="threshold"
-                        placeholder="Enter threshold value"
+                        id="dateOfDelivery"
+                        name="dateOfDelivery"
+                        placeholder="Enter date of delivery"
                         className="flex-1"
                       />
                     </div>
@@ -246,17 +224,14 @@ const InventoryTable = ({ categories, products }: any) => {
           </Select>
 
           <Button size={"sm"} variant={"outline"} className="rounded-none">
-            Download All
+            Order History
           </Button>
         </div>
       </div>
       <div className="w-full py-4">
-        {currentPageProducts && (
+        {currentPageorders && (
           <div className="flex flex-col gap-2">
-            <DataTable
-              columns={inventoryProductsColumns}
-              data={currentPageProducts}
-            />
+            <DataTable columns={ordersColums} data={currentPageorders} />
             <div>
               <Pagination
                 currentPage={currentPage}
@@ -271,4 +246,4 @@ const InventoryTable = ({ categories, products }: any) => {
   );
 };
 
-export default InventoryTable;
+export default OrdersTable;

@@ -1773,249 +1773,183 @@
         ]
       }
     },
+    "categories": [
+      { "id": "audio", "name": "Audio" },
+      { "id": "accessories", "name": "Accessories" },
+      { "id": "computers", "name": "Computers" },
+      { "id": "mobile", "name": "Mobile" },
+      { "id": "wearables", "name": "Wearables" }
+    ],
     "orders": [
       {
-        "id": 1,
         "orderId": "ORD-2024-001",
         "customerName": "John Smith",
-        "customerEmail": "john.smith@email.com",
-        "contactNumber": "+1 (555) 123-4567",
-        "orderDate": "2024-01-15",
-        "deliveryDate": "2024-01-18",
-        "totalAmount": 329.97,
-        "status": "Delivered",
-        "paymentMethod": "Credit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "123 Main St, New York, NY 10001",
-        "items": [
-          { "product": "Wireless Headphones", "quantity": 2, "price": 129.99 },
-          { "product": "USB-C Hub", "quantity": 1, "price": 42.99 }
-        ]
+        "product": "Wireless Headphones",
+        "category": "Audio",
+        "quantity": 2,
+        "orderValue": 259.98,
+        "expectedDelivery": "2024-01-18",
+        "status": "Delivered"
       },
       {
-        "id": 2,
+        "orderId": "ORD-2024-001",
+        "customerName": "John Smith",
+        "product": "USB-C Hub",
+        "category": "Accessories",
+        "quantity": 1,
+        "orderValue": 42.99,
+        "expectedDelivery": "2024-01-18",
+        "status": "Delivered"
+      },
+      {
         "orderId": "ORD-2024-002",
         "customerName": "Emma Johnson",
-        "customerEmail": "emma.j@email.com",
-        "contactNumber": "+1 (555) 234-5678",
-        "orderDate": "2024-01-14",
-        "deliveryDate": "2024-01-17",
-        "totalAmount": 899.99,
-        "status": "Delivered",
-        "paymentMethod": "PayPal",
-        "paymentStatus": "Paid",
-        "shippingAddress": "456 Oak Ave, Los Angeles, CA 90001",
-        "items": [{ "product": "Smartphone X", "quantity": 1, "price": 899.99 }]
+        "product": "Smartphone X",
+        "category": "Mobile",
+        "quantity": 1,
+        "orderValue": 899.99,
+        "expectedDelivery": "2024-01-17",
+        "status": "Delivered"
       },
       {
-        "id": 3,
         "orderId": "ORD-2024-003",
         "customerName": "Michael Brown",
-        "customerEmail": "michael.b@email.com",
-        "contactNumber": "+1 (555) 345-6789",
-        "orderDate": "2024-01-13",
-        "deliveryDate": "2024-01-20",
-        "totalAmount": 1799.98,
-        "status": "On the Way",
-        "paymentMethod": "Credit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "789 Pine St, Chicago, IL 60601",
-        "items": [
-          { "product": "Laptop Pro", "quantity": 1, "price": 1299.99 },
-          { "product": "Gaming Mouse", "quantity": 2, "price": 59.99 }
-        ]
+        "product": "Laptop Pro",
+        "category": "Computers",
+        "quantity": 1,
+        "orderValue": 1299.99,
+        "expectedDelivery": "2024-01-20",
+        "status": "On the Way"
       },
       {
-        "id": 4,
+        "orderId": "ORD-2024-003",
+        "customerName": "Michael Brown",
+        "product": "Gaming Mouse",
+        "category": "Accessories",
+        "quantity": 2,
+        "orderValue": 119.98,
+        "expectedDelivery": "2024-01-20",
+        "status": "On the Way"
+      },
+      {
         "orderId": "ORD-2024-004",
         "customerName": "Sarah Davis",
-        "customerEmail": "sarah.d@email.com",
-        "contactNumber": "+1 (555) 456-7890",
-        "orderDate": "2024-01-12",
-        "deliveryDate": "2024-01-15",
-        "totalAmount": 159.98,
-        "status": "Delivered",
-        "paymentMethod": "Debit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "321 Elm St, Houston, TX 77001",
-        "items": [
-          { "product": "Bluetooth Speaker", "quantity": 2, "price": 79.99 }
-        ]
+        "product": "Bluetooth Speaker",
+        "category": "Audio",
+        "quantity": 2,
+        "orderValue": 159.98,
+        "expectedDelivery": "2024-01-15",
+        "status": "Delivered"
       },
       {
-        "id": 5,
         "orderId": "ORD-2024-005",
         "customerName": "Robert Wilson",
-        "customerEmail": "robert.w@email.com",
-        "contactNumber": "+1 (555) 567-8901",
-        "orderDate": "2024-01-11",
-        "deliveryDate": "2024-01-14",
-        "totalAmount": 399.98,
-        "status": "Delivered",
-        "paymentMethod": "Credit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "654 Maple Dr, Phoenix, AZ 85001",
-        "items": [
-          { "product": "Fitness Tracker", "quantity": 2, "price": 199.99 }
-        ]
+        "product": "Fitness Tracker",
+        "category": "Wearables",
+        "quantity": 2,
+        "orderValue": 399.98,
+        "expectedDelivery": "2024-01-14",
+        "status": "Delivered"
       },
       {
-        "id": 6,
         "orderId": "ORD-2024-006",
         "customerName": "Lisa Anderson",
-        "customerEmail": "lisa.a@email.com",
-        "contactNumber": "+1 (555) 678-9012",
-        "orderDate": "2024-01-10",
-        "deliveryDate": "2024-01-16",
-        "totalAmount": 449.99,
-        "status": "Delivered",
-        "paymentMethod": "PayPal",
-        "paymentStatus": "Paid",
-        "shippingAddress": "987 Cedar Ln, Philadelphia, PA 19101",
-        "items": [{ "product": "4K Monitor", "quantity": 1, "price": 449.99 }]
+        "product": "4K Monitor",
+        "category": "Computers",
+        "quantity": 1,
+        "orderValue": 449.99,
+        "expectedDelivery": "2024-01-16",
+        "status": "Delivered"
       },
       {
-        "id": 7,
         "orderId": "ORD-2024-007",
         "customerName": "David Miller",
-        "customerEmail": "david.m@email.com",
-        "contactNumber": "+1 (555) 789-0123",
-        "orderDate": "2024-01-09",
-        "deliveryDate": "2024-01-12",
-        "totalAmount": 119.98,
-        "status": "Delivered",
-        "paymentMethod": "Credit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "147 Birch Rd, San Antonio, TX 78201",
-        "items": [{ "product": "Gaming Mouse", "quantity": 2, "price": 59.99 }]
+        "product": "Gaming Mouse",
+        "category": "Accessories",
+        "quantity": 2,
+        "orderValue": 119.98,
+        "expectedDelivery": "2024-01-12",
+        "status": "Delivered"
       },
       {
-        "id": 8,
         "orderId": "ORD-2024-008",
         "customerName": "Jessica Taylor",
-        "customerEmail": "jessica.t@email.com",
-        "contactNumber": "+1 (555) 890-1234",
-        "orderDate": "2024-01-08",
-        "deliveryDate": "2024-01-15",
-        "totalAmount": 129.99,
-        "status": "Delivered",
-        "paymentMethod": "Debit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "258 Walnut St, San Diego, CA 92101",
-        "items": [
-          { "product": "Mechanical Keyboard", "quantity": 1, "price": 129.99 }
-        ]
+        "product": "Mechanical Keyboard",
+        "category": "Accessories",
+        "quantity": 1,
+        "orderValue": 129.99,
+        "expectedDelivery": "2024-01-15",
+        "status": "Delivered"
       },
       {
-        "id": 9,
         "orderId": "ORD-2024-009",
         "customerName": "William Thomas",
-        "customerEmail": "william.t@email.com",
-        "contactNumber": "+1 (555) 901-2345",
-        "orderDate": "2024-01-07",
-        "deliveryDate": "2024-01-19",
-        "totalAmount": 99.98,
-        "status": "On the Way",
-        "paymentMethod": "Credit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "369 Spruce Ave, Dallas, TX 75201",
-        "items": [
-          { "product": "Power Bank 20000mAh", "quantity": 2, "price": 49.99 }
-        ]
+        "product": "Power Bank 20000mAh",
+        "category": "Accessories",
+        "quantity": 2,
+        "orderValue": 99.98,
+        "expectedDelivery": "2024-01-19",
+        "status": "On the Way"
       },
       {
-        "id": 10,
         "orderId": "ORD-2024-010",
         "customerName": "Amanda Moore",
-        "customerEmail": "amanda.m@email.com",
-        "contactNumber": "+1 (555) 012-3456",
-        "orderDate": "2024-01-06",
-        "deliveryDate": "2024-01-09",
-        "totalAmount": 89.99,
-        "status": "Returned",
-        "paymentMethod": "PayPal",
-        "paymentStatus": "Refunded",
-        "shippingAddress": "741 Fir St, San Jose, CA 95101",
-        "items": [{ "product": "Webcam HD", "quantity": 1, "price": 89.99 }]
+        "product": "Webcam HD",
+        "category": "Accessories",
+        "quantity": 1,
+        "orderValue": 89.99,
+        "expectedDelivery": "2024-01-09",
+        "status": "Returned"
       },
       {
-        "id": 11,
         "orderId": "ORD-2024-011",
         "customerName": "James Jackson",
-        "customerEmail": "james.j@email.com",
-        "contactNumber": "+1 (555) 112-2334",
-        "orderDate": "2024-01-05",
-        "deliveryDate": "2024-01-11",
-        "totalAmount": 209.97,
-        "status": "Delivered",
-        "paymentMethod": "Credit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "852 Poplar Dr, Austin, TX 73301",
-        "items": [
-          { "product": "Wireless Earbuds", "quantity": 3, "price": 69.99 }
-        ]
+        "product": "Wireless Earbuds",
+        "category": "Audio",
+        "quantity": 3,
+        "orderValue": 209.97,
+        "expectedDelivery": "2024-01-11",
+        "status": "Delivered"
       },
       {
-        "id": 12,
         "orderId": "ORD-2024-012",
         "customerName": "Olivia White",
-        "customerEmail": "olivia.w@email.com",
-        "contactNumber": "+1 (555) 223-3445",
-        "orderDate": "2024-01-04",
-        "deliveryDate": "2024-01-10",
-        "totalAmount": 399.99,
-        "status": "Cancelled",
-        "paymentMethod": "Credit Card",
-        "paymentStatus": "Refunded",
-        "shippingAddress": "963 Ash St, Jacksonville, FL 32201",
-        "items": [{ "product": "Tablet Mini", "quantity": 1, "price": 399.99 }]
+        "product": "Tablet Mini",
+        "category": "Mobile",
+        "quantity": 1,
+        "orderValue": 399.99,
+        "expectedDelivery": "2024-01-10",
+        "status": "Cancelled"
       },
       {
-        "id": 13,
         "orderId": "ORD-2024-013",
         "customerName": "Daniel Harris",
-        "customerEmail": "daniel.h@email.com",
-        "contactNumber": "+1 (555) 334-4556",
-        "orderDate": "2024-01-03",
-        "deliveryDate": "2024-01-08",
-        "totalAmount": 85.98,
-        "status": "Delivered",
-        "paymentMethod": "Debit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "159 Beech Ln, Indianapolis, IN 46201",
-        "items": [{ "product": "USB-C Hub", "quantity": 2, "price": 42.99 }]
+        "product": "USB-C Hub",
+        "category": "Accessories",
+        "quantity": 2,
+        "orderValue": 85.98,
+        "expectedDelivery": "2024-01-08",
+        "status": "Delivered"
       },
       {
-        "id": 14,
         "orderId": "ORD-2024-014",
         "customerName": "Sophia Martin",
-        "customerEmail": "sophia.m@email.com",
-        "contactNumber": "+1 (555) 445-5667",
-        "orderDate": "2024-01-02",
-        "deliveryDate": "2024-01-07",
-        "totalAmount": 99.98,
-        "status": "Delivered",
-        "paymentMethod": "PayPal",
-        "paymentStatus": "Paid",
-        "shippingAddress": "753 Willow Way, Columbus, OH 43201",
-        "items": [{ "product": "Laptop Stand", "quantity": 2, "price": 49.99 }]
+        "product": "Laptop Stand",
+        "category": "Accessories",
+        "quantity": 2,
+        "orderValue": 99.98,
+        "expectedDelivery": "2024-01-07",
+        "status": "Delivered"
       },
       {
-        "id": 15,
         "orderId": "ORD-2024-015",
         "customerName": "Christopher Thompson",
-        "customerEmail": "chris.t@email.com",
-        "contactNumber": "+1 (555) 556-6778",
-        "orderDate": "2024-01-01",
-        "deliveryDate": "2024-01-06",
-        "totalAmount": 239.98,
-        "status": "Delivered",
-        "paymentMethod": "Credit Card",
-        "paymentStatus": "Paid",
-        "shippingAddress": "951 Redwood Blvd, Charlotte, NC 28201",
-        "items": [
-          { "product": "External SSD 1TB", "quantity": 2, "price": 119.99 }
-        ]
+        "product": "External SSD 1TB",
+        "category": "Accessories",
+        "quantity": 2,
+        "orderValue": 239.98,
+        "expectedDelivery": "2024-01-06",
+        "status": "Delivered"
       }
     ],
     "orderStats": {

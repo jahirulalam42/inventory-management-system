@@ -35,3 +35,12 @@ export async function getSuppliersData() {
     console.error(error);
   }
 }
+
+export async function getOrdersData() {
+  try {
+    const response = await axios.get("http://localhost:4000/orders");
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}

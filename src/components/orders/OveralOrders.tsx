@@ -1,30 +1,31 @@
 import React from "react";
 
-const OverallInventory = ({ data }: any) => {
-  // console.log("Overall Data", data);
+const OverallOrders = ({ data }: any) => {
+  const { onTheWay, ordersReceived, totalOrders, totalReturned }: any =
+    data || {};
   return (
-    <div className="w-full h-fit bg-white rounded-md p-4 flex flex-col gap-4">
-      <h1 className="text-xl">Overall Inventory</h1>
+    <div className="w-full h-fit bg-white rounded-sm p-4 flex flex-col gap-4">
+      <h1 className="text-xl">Overall Orders</h1>
 
       <div className="w-full grid grid-flow-row grid-cols-2 lg:grid-flow-col lg:grid-cols-4 justify-between">
         <div className="flex flex-row">
           <div className="h-full w-full flex flex-col gap-2 xl:gap-4">
-            <h1 className="font-bold text-blue-500">Categories</h1>
-            <p className="font-bold">{data?.categories?.last7Days}</p>
+            <h1 className="font-bold text-blue-500">Total Orders</h1>
+            <p className="font-bold">{onTheWay?.ordered}</p>
             <p className="text-gray-500 text-xs xl:text-sm">Last 7 days</p>
           </div>
           <div className="hidden lg:inline-block h-full w-0.5 self-stretch bg-neutral-300 dark:bg-white/10 md:mr-4"></div>
         </div>
         <div className="flex flex-row">
           <div className="h-full w-full flex flex-col gap-2 xl:gap-4">
-            <h1 className="font-bold text-orange-500">Total Products</h1>
+            <h1 className="font-bold text-orange-500">Total Received</h1>
             <div className="flex flex-row justify-center items-center">
               <div className="w-full flex flex-col gap-2 xl:gap-4   justify-center items-start">
-                <p className="font-bold">{data?.totalProducts?.last7Days}</p>
+                <p className="font-bold">{ordersReceived?.last7Days}</p>
                 <p className="text-gray-500 text-xs xl:text-sm">Last 7 days</p>
               </div>
               <div className="w-full flex flex-col gap-2 xl:gap-4 justify-center items-start">
-                <p className="font-bold">{data?.totalProducts?.revenue}</p>
+                <p className="font-bold">{ordersReceived?.revenue}</p>
                 <p className="text-gray-500 text-xs xl:text-sm">Revenue</p>
               </div>
             </div>
@@ -33,14 +34,14 @@ const OverallInventory = ({ data }: any) => {
         </div>
         <div className="flex flex-row">
           <div className="h-full w-full flex flex-col gap-2 xl:gap-4">
-            <h1 className="font-bold text-violet-500">Top Selling</h1>
+            <h1 className="font-bold text-violet-500">Total Returned</h1>
             <div className="flex flex-row justify-center items-center">
               <div className="w-full flex flex-col gap-2 xl:gap-4   justify-center items-start">
-                <p className="font-bold">{data?.topSelling?.last7Days}</p>
+                <p className="font-bold">{totalReturned?.last7Days}</p>
                 <p className="text-gray-500 text-xs xl:text-sm">Last 7 days</p>
               </div>
               <div className="w-full flex flex-col gap-2 xl:gap-4 justify-center items-start">
-                <p className="font-bold">{data?.topSelling?.cost}</p>
+                <p className="font-bold">{totalReturned?.cost}</p>
                 <p className="text-gray-500 text-xs xl:text-sm">Cost</p>
               </div>
             </div>
@@ -48,15 +49,15 @@ const OverallInventory = ({ data }: any) => {
           <div className="hidden lg:inline-block h-full w-0.5 self-stretch bg-neutral-300 dark:bg-white/10 md:mr-4"></div>
         </div>
         <div className="h-full w-full flex flex-col gap-2 xl:gap-4">
-          <h1 className="font-bold text-red-500">Low Stocks</h1>
+          <h1 className="font-bold text-red-500">On the way</h1>
           <div className="flex flex-row justify-center items-center">
             <div className="w-full flex flex-col gap-2 xl:gap-4   justify-center items-start">
-              <p className="font-bold">{data?.lowStocks?.ordered}</p>
+              <p className="font-bold">{onTheWay?.ordered}</p>
               <p className="text-gray-500 text-xs xl:text-sm">Ordered</p>
             </div>
             <div className="w-full flex flex-col gap-2 xl:gap-4  justify-center items-start">
-              <p className="font-bold">{data?.lowStocks?.notInStock}</p>
-              <p className="text-gray-500 text-xs xl:text-sm">Not in stock</p>
+              <p className="font-bold">{onTheWay?.cost}</p>
+              <p className="text-gray-500 text-xs xl:text-sm">Cost</p>
             </div>
           </div>
         </div>
@@ -65,4 +66,4 @@ const OverallInventory = ({ data }: any) => {
   );
 };
 
-export default OverallInventory;
+export default OverallOrders;
