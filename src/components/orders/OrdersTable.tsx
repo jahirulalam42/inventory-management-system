@@ -64,7 +64,7 @@ const OrdersTable = ({ categories, orders }: any) => {
   return (
     <div className="w-full h-fit bg-white rounded-sm p-6">
       <div className="w-full flex flex-col lg:flex-row gap-4 justify-between">
-        <h1 className="text-xl">orders</h1>
+        <h1 className="text-xl">Orders</h1>
         <div className="grid grid-flow-row grid-cols-2 lg:grid-flow-col lg:grid-rows-1 gap-4">
           <div>
             <Dialog>

@@ -53,7 +53,7 @@ const items = [
   },
   {
     title: "Manage Store",
-    url: "#",
+    url: "/manageStore",
     icon: ClipboardList,
   },
 ];

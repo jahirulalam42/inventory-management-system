@@ -44,3 +44,12 @@ export async function getOrdersData() {
     console.error(error);
   }
 }
+
+export async function getManageStoreData() {
+  try {
+    const response = await axios.get("http://localhost:4000/manageStore");
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
