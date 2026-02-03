@@ -8,36 +8,40 @@ import PurchaseOverviewCard from "@/components/dashboard/PurchaseOverviewCard";
 import SalesChart from "@/components/dashboard/SalesChart";
 import SalesOverviewCard from "@/components/dashboard/SalesOverviewCard";
 import TopSellingTable from "@/components/dashboard/TopSellingTable";
+import { setData } from "@/features/dashboard/dashboardSlice";
 import { getDashboardData } from "@/utils/api";
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 const page = () => {
-  const [data, setData] = useState<any>();
+  const data = useSelector((state: any) => state.dashboard.data);
+  const dispatch = useDispatch();
+  // const [data, setData] = useState<any>();
 
   useEffect(() => {
     async function fetchData() {
       const result = await getDashboardData();
-      setData(result);
+      dispatch(setData(result));
     }
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   console.log(data);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-2 xl:gap-6">
       <div className="w-full lg:col-span-2 flex flex-col gap-4">
-        <SalesOverviewCard data={data?.salesOverview} />
-        <PurchaseOverviewCard data={data?.purchaseOverview} />
-        <SalesChart data={data?.salesPurchasesChart} />
-        <TopSellingTable data={data?.topSellingStock} />
+        <SalesOverviewCard />
+        <PurchaseOverviewCard />
+        <SalesChart />
+        <TopSellingTable />
       </div>
 
       <div className="w-full lg:col-span-1 flex flex-col gap-4">
-        <InventorySummaryCard data={data?.inventorySummary} />
-        <ProductSummaryCard data={data?.productSummary} />
-        <OrderChart data={data?.orderSummary} />
-        <LowQuantity data={data?.lowQuantityStock} />
+        <InventorySummaryCard />
+        <ProductSummaryCard />
+        <OrderChart />
+        <LowQuantity />
       </div>
     </div>
   );

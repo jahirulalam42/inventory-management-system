@@ -2,9 +2,11 @@ import React from "react";
 import { DataTable } from "../table/data-table";
 import { topSellingColumns } from "@/components/table/columns";
 import { Button } from "../ui/button";
+import { useSelector } from "react-redux";
 
-const TopSellingTable = ({ data }: any) => {
+const TopSellingTable = () => {
   // console.log("Table Data", data);
+  const data = useSelector((state: any) => state.dashboard.topSellingStock);
   return (
     <div className="w-full h-77 bg-white rounded-sm py-6 lg:p-6">
       <div className="w-full flex flex-row justify-between">

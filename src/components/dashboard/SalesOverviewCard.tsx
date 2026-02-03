@@ -4,8 +4,10 @@ import salesIcon from "../../../public/images/Sales.svg";
 import revenueIcon from "../../../public/images/Revenue.svg";
 import profitIcon from "../../../public/images/Profit.svg";
 import costIcon from "../../../public/images/Cost.svg";
+import { useSelector } from "react-redux";
 
-const SalesOverviewCard = ({ data }: any) => {
+const SalesOverviewCard = () => {
+  const data = useSelector((state: any) => state.dashboard.salesOverview);
   return (
     <div className="w-full h-40.75 flex flex-col justify-center py-1 lg:p-6 gap-4 rounded-sm bg-white">
       <h1 className="h-[20%] flex-auto text-xl">Sales Overview</h1>

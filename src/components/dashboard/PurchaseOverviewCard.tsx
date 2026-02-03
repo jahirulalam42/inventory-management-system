@@ -4,8 +4,11 @@ import purchaseIcon from "../../../public/images/Purchase bag.svg";
 import cancelIcon from "../../../public/images/Cancel.svg";
 import profitIcon from "../../../public/images/Profit.svg";
 import costIcon from "../../../public/images/Cost.svg";
+import { useSelector } from "react-redux";
+import { stat } from "fs";
 
-const PurchaseOverviewCard = ({ data }: any) => {
+const PurchaseOverviewCard = () => {
+  const data = useSelector((state: any) => state.dashboard.purchaseOverview);
   return (
     <div className="w-full h-40.75 flex flex-col justify-center py-1 lg:p-6 gap-4 rounded-sm bg-white">
       <h1 className="h-[20%] flex-auto text-xl">Purchase Overview</h1>

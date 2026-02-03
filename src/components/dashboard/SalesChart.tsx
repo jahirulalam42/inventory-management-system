@@ -21,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { useSelector } from "react-redux";
 // import faker from "faker";
 
 ChartJS.register(
@@ -32,11 +33,15 @@ ChartJS.register(
   Legend
 );
 
-const SalesChart = ({ data }: any) => {
+const SalesChart = () => {
   // console.log("Data", data);
+
+  const data = useSelector((state: any) => state.dashboard.salesPurchasesChart);
 
   const [dayValue, setDayValue] = useState("daily");
   const [filteredData, setFilteredData] = useState(data?.daily);
+
+  console.log("Filtered Data", filteredData);
 
   const handleDayValue = (value: any) => {
     setDayValue(value);

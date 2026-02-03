@@ -11,6 +11,7 @@ import {
   Filler,
   Legend,
 } from "chart.js";
+import { useSelector } from "react-redux";
 
 ChartJS.register(
   CategoryScale,
@@ -20,12 +21,12 @@ ChartJS.register(
   Title,
   Tooltip,
   Filler,
-  Legend,
+  Legend
 );
 
-const OrderChart = ({ data }: any) => {
+const OrderChart = () => {
   // console.log("Order Summary Data", data);
-
+  const data = useSelector((state: any) => state.dashboard.orderSummary);
   const options = {
     responsive: true,
     maintainAspectRatio: false,

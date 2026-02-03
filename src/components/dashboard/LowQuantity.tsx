@@ -1,9 +1,10 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 
-const LowQuantity = ({ data }: any) => {
-  console.log(data);
+const LowQuantity = () => {
+  const data = useSelector((state: any) => state.dashboard.lowQuantityStock);
   return (
     <div className="w-full h-77 bg-white rounded-sm py-6 lg:p-6">
       <div className="w-full flex flex-row justify-between">

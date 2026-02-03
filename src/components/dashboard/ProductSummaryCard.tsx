@@ -2,8 +2,10 @@ import Image from "next/image";
 import React from "react";
 import categoriesIcon from "../../../public/images/Categories.png";
 import suppliersIcon from "../../../public/images/Suppliers.png";
+import { useSelector } from "react-redux";
 
-const ProductSummaryCard = ({ data }: any) => {
+const ProductSummaryCard = () => {
+  const data = useSelector((state: any) => state.dashboard.productSummary);
   return (
     <div className="w-full h-40.75 flex flex-col justify-center py-6 lg:p-6 gap-4 rounded-sm bg-white">
       <h1 className="h-[20%] flex-auto text-xl">Product Summary</h1>

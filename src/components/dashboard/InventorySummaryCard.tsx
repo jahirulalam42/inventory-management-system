@@ -2,8 +2,10 @@ import Image from "next/image";
 import React from "react";
 import quantityIcon from "../../../public/images/Quantity.png";
 import onTheWayIcon from "../../../public/images/On the way.png";
+import { useSelector } from "react-redux";
 
-const InventorySummaryCard = ({ data }: any) => {
+const InventorySummaryCard = () => {
+  const data = useSelector((state: any) => state.dashboard.inventorySummary);
   return (
     <div className="w-full h-40.75 flex flex-col justify-center py-6 lg:p-6 gap-4 rounded-sm bg-white">
       <h1 className="h-[20%] flex-auto text-xl">Inventory Summary</h1>
