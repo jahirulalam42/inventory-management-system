@@ -45,10 +45,6 @@ const SalesChart = () => {
   const filteredData = useSelector(
     (state: any) => state.dashboard.filteredData
   );
-  console.log("Data", data);
-
-  // const [dayValue, setDayValue] = useState("daily");
-  // const [filteredData, setFilteredData] = useState(data?.daily);
 
   console.log("Filtered Data", filteredData);
 

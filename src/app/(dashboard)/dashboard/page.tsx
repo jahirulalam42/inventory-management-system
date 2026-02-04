@@ -14,7 +14,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 const page = () => {
-  const data = useSelector((state: any) => state.dashboard.data);
   const dispatch = useDispatch();
   // const [data, setData] = useState<any>();
 
@@ -26,7 +25,7 @@ const page = () => {
     fetchData();
   }, [dispatch]);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-2 xl:gap-6">
