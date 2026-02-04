@@ -12,6 +12,8 @@ export const dashboardSlice = createSlice({
     productSummary: {},
     orderSummary: [],
     lowQuantityStock: [],
+    dayValue: "daily",
+    filteredData: [],
   },
   reducers: {
     setData: (state, action) => {
@@ -25,9 +27,15 @@ export const dashboardSlice = createSlice({
       state.orderSummary = action.payload.orderSummary;
       state.lowQuantityStock = action.payload.lowQuantityStock;
     },
+    setDayValue: (state, action) => {
+      state.dayValue = action.payload;
+    },
+    setFilteredData: (state, action) => {
+      state.filteredData = action.payload;
+    },
   },
 });
 
-export const { setData } = dashboardSlice.actions;
+export const { setData, setDayValue, setFilteredData } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

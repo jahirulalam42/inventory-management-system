@@ -21,7 +21,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setDayValue,
+  setFilteredData,
+} from "@/features/dashboard/dashboardSlice";
 // import faker from "faker";
 
 ChartJS.register(
@@ -34,17 +38,22 @@ ChartJS.register(
 );
 
 const SalesChart = () => {
-  // console.log("Data", data);
+  const dispatch = useDispatch<any>();
 
   const data = useSelector((state: any) => state.dashboard.salesPurchasesChart);
+  const dayValue = useSelector((state: any) => state.dashboard.dayValue);
+  const filteredData = useSelector(
+    (state: any) => state.dashboard.filteredData
+  );
+  console.log("Data", data);
 
-  const [dayValue, setDayValue] = useState("daily");
-  const [filteredData, setFilteredData] = useState(data?.daily);
+  // const [dayValue, setDayValue] = useState("daily");
+  // const [filteredData, setFilteredData] = useState(data?.daily);
 
   console.log("Filtered Data", filteredData);
 
   const handleDayValue = (value: any) => {
-    setDayValue(value);
+    dispatch(setDayValue(value));
   };
 
   useEffect(() => {
@@ -52,16 +61,16 @@ const SalesChart = () => {
 
     switch (dayValue) {
       case "daily":
-        setFilteredData(data?.daily);
+        dispatch(setFilteredData(data?.daily));
         break;
       case "weekly":
-        setFilteredData(data?.weekly);
+        dispatch(setFilteredData(data?.weekly));
         break;
       case "monthly":
-        setFilteredData(data?.monthly);
+        dispatch(setFilteredData(data?.monthly));
         break;
       case "yearly":
-        setFilteredData(data?.yearly);
+        dispatch(setFilteredData(data?.yearly));
         break;
     }
   }, [dayValue, data]);
