@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const OverallInventory = ({ data }: any) => {
+const OverallInventory = () => {
+  const data = useSelector((state: any) => state.inventory.overview);
   // console.log("Overall Data", data);
   return (
     <div className="w-full h-fit bg-white rounded-md p-4 flex flex-col gap-4">

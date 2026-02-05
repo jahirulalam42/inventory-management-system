@@ -25,17 +25,24 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
 import Pagination from "../common/Pagination";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectValue } from "@/features/inventory/inventorySlice";
 
-const InventoryTable = ({ categories, products }: any) => {
+const InventoryTable = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state: any) => state.inventory.data);
+  const selectValue = useSelector((state: any) => state.inventory.selectValue);
   // console.log("Categories", categories);
   // console.log("Products", products);
 
-  const [selectValue, setSelectValue] = React.useState<any>("all");
+  const { categories, products } = data;
+
+  // const [selectValue, setSelectValue] = React.useState<any>("all");
   const [updateProducts, setUpdateProducts] = useState<any>(products);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handleSelect = (value: string) => {
-    setSelectValue(value);
+    dispatch(setSelectValue(value));
     setCurrentPage(1);
   };
 
@@ -60,7 +67,7 @@ const InventoryTable = ({ categories, products }: any) => {
     }
 
     const filteredProducts = products?.filter(
-      (product: any) => product?.category === selectValue
+      (product: any) => product?.category === selectValue,
     );
 
     setUpdateProducts(filteredProducts);

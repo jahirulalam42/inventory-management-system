@@ -23,8 +23,8 @@ const page = () => {
   console.log("Inventory Data", data);
   return (
     <div className="flex flex-col gap-4">
-      <OverallInventory data={data?.overview} />
-      <InventoryTable categories={data?.categories} products={data?.products} />
+      <OverallInventory />
+      <InventoryTable />
     </div>
   );
 };
