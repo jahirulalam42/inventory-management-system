@@ -1,8 +1,10 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReducerProvider from "@/components/common/ReducerProvider";
-import { AuthProvider } from "@/context/AuthContext";
+import { SessionProvider } from "next-auth/react";
+import Providers from "@/components/common/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {" "}
-        <AuthProvider>
-          <ReducerProvider>{children}</ReducerProvider>
-        </AuthProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

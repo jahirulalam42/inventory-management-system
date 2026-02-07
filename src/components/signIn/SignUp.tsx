@@ -1,8 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { signIn, useSession } from "next-auth/react";
 
 import LoginLogo from "../../../public/images/Logo-login.png";
 import LoginLogoSmall from "../../../public/images/Logo-login-small.png";
@@ -19,7 +21,6 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { useAuth } from "@/context/AuthContext";
 
 interface SignUpInputs {
   name: string;
@@ -36,26 +37,79 @@ const SignUp = () => {
     },
   });
 
+  const router = useRouter();
+  const { data: session, status } = useSession();
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
-  const { signup } = useAuth();
 
-  const onSubmit: SubmitHandler<SignUpInputs> = async (data) => {
+  // Redirect if already logged in
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/dashboard");
+    }
+  }, [status, router]);
+
+  const onSubmit = async (data: SignUpInputs) => {
     setIsLoading(true);
     setError("");
 
     try {
-      const result = await signup(data.email, data.password, data.name);
+      // Call the signup API
+      const res = await fetch("/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-      if (!result.success) {
-        setError(result.error || "Signup failed. Please try again.");
+      const result = await res.json();
+
+      if (!res.ok) {
+        setError(result.error || "Signup failed");
+        return;
+      }
+
+      // After successful signup, sign in with credentials
+      const signInResult = await signIn("credentials", {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      });
+
+      if (signInResult?.error) {
+        setError("Account created but login failed. Please try logging in.");
+      } else {
+        router.push("/dashboard");
+        router.refresh();
       }
     } catch (error: any) {
+      console.error("Signup error:", error);
       setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
     }
   };
+
+  const handleGoogleSignUp = () => {
+    signIn("google", {
+      callbackUrl: "/dashboard",
+    });
+  };
+
+  // Show loading while checking auth status
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  // If already authenticated, show nothing (will redirect in useEffect)
+  if (status === "authenticated") {
+    return null;
+  }
 
   return (
     <div className="min-h-screen flex md:flex-row flex-col justify-center items-center">
@@ -76,7 +130,7 @@ const SignUp = () => {
           Start your 30-day free trial.
         </p>
 
-        <div className="min-w-sm flex flex-col gap-6">
+        <div className="min-w-sm w-full max-w-md flex flex-col gap-6">
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-md text-sm">
               {error}
@@ -173,13 +227,33 @@ const SignUp = () => {
             </form>
           </Form>
 
-          {/* GOOGLE */}
+          {/* Divider */}
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300"></div>
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 bg-white text-gray-500">
+                Or continue with
+              </span>
+            </div>
+          </div>
+
+          {/* GOOGLE SIGN UP */}
           <Button
-            className="rounded-sm border-2 border-gray-100"
+            onClick={handleGoogleSignUp}
+            className="rounded-sm border-2 border-gray-100 hover:bg-gray-50"
             variant="ghost"
             disabled={isLoading}
           >
-            <Image src={GoogleLogo} alt="Google Logo" /> Sign up with Google
+            <Image
+              src={GoogleLogo}
+              alt="Google Logo"
+              width={20}
+              height={20}
+              className="mr-2"
+            />
+            Sign up with Google
           </Button>
 
           {/* LOGIN LINK */}

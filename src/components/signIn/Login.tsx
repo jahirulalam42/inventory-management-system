@@ -5,7 +5,7 @@ import LoginLogo from "../../../public/images/Logo-login.png";
 import LoginLogoSmall from "../../../public/images/Logo-login-small.png";
 import GoogleLogo from "../../../public/images/google.png";
 
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import {
   Form,
   FormControl,
@@ -19,7 +19,8 @@ import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { useAuth } from "@/context/AuthContext";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface Inputs {
   username: string;
@@ -36,25 +37,39 @@ const Login = () => {
     },
   });
 
+  const router = useRouter();
   const [error, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
 
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+  const onSubmit = async (data: Inputs) => {
     setIsLoading(true);
     setError("");
 
     try {
-      const result = await login(data.username, data.password);
+      const result = await signIn("credentials", {
+        email: data.username,
+        password: data.password,
+        redirect: false,
+      });
 
-      if (!result.success) {
-        setError(result.error || "Login failed. Please try again.");
+      if (result?.error) {
+        setError("Invalid email or password");
+      } else {
+        router.push("/dashboard");
+        router.refresh();
       }
     } catch (error: any) {
       setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleGoogleSignIn = () => {
+    signIn("google", {
+      callbackUrl: "/dashboard",
+      redirect: true,
+    });
   };
 
   return (
@@ -169,13 +184,33 @@ const Login = () => {
             </form>
           </Form>
 
+          {/* Divider */}
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300"></div>
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 bg-white text-gray-500">
+                Or continue with
+              </span>
+            </div>
+          </div>
+
           {/* GOOGLE BUTTON */}
           <Button
-            className="rounded-sm border-2 border-gray-100"
+            onClick={handleGoogleSignIn}
+            className="rounded-sm border-2 border-gray-100 hover:bg-gray-50"
             variant="ghost"
             disabled={isLoading}
           >
-            <Image src={GoogleLogo} alt="Google Logo" /> Sign in with Google
+            <Image
+              src={GoogleLogo}
+              alt="Google Logo"
+              width={20}
+              height={20}
+              className="mr-2"
+            />
+            Sign in with Google
           </Button>
 
           <p className="text-center text-sm text-gray-500">

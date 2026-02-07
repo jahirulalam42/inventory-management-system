@@ -1,4 +1,4 @@
-import { MongoClient, Db } from "mongodb";
+import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI as string;
 
@@ -22,23 +22,6 @@ if (process.env.NODE_ENV === "development") {
 } else {
   client = new MongoClient(uri);
   clientPromise = client.connect();
-}
-
-// Helper function to get database
-export async function getDb(): Promise<Db> {
-  const client = await clientPromise;
-  return client.db(process.env.MONGODB_DB || "your-database-name");
-}
-
-// Helper function to get collections
-export async function getUsersCollection() {
-  const db = await getDb();
-  return db.collection("users");
-}
-
-export async function getSessionsCollection() {
-  const db = await getDb();
-  return db.collection("sessions");
 }
 
 export default clientPromise;
