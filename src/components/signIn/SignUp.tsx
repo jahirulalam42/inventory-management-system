@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -19,6 +19,7 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { useAuth } from "@/context/AuthContext";
 
 interface SignUpInputs {
   name: string;
@@ -35,8 +36,25 @@ const SignUp = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<SignUpInputs> = (data) => {
-    console.log("SIGNUP DATA:", data);
+  const [error, setError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { signup } = useAuth();
+
+  const onSubmit: SubmitHandler<SignUpInputs> = async (data) => {
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const result = await signup(data.email, data.password, data.name);
+
+      if (!result.success) {
+        setError(result.error || "Signup failed. Please try again.");
+      }
+    } catch (error: any) {
+      setError("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -59,6 +77,12 @@ const SignUp = () => {
         </p>
 
         <div className="min-w-sm flex flex-col gap-6">
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-md text-sm">
+              {error}
+            </div>
+          )}
+
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -73,7 +97,11 @@ const SignUp = () => {
                   <FormItem>
                     <FormLabel>Name *</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your name" {...field} />
+                      <Input
+                        placeholder="Enter your name"
+                        {...field}
+                        disabled={isLoading}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -84,7 +112,13 @@ const SignUp = () => {
               <FormField
                 control={form.control}
                 name="email"
-                rules={{ required: "Email is required" }}
+                rules={{
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email address",
+                  },
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Email *</FormLabel>
@@ -93,6 +127,7 @@ const SignUp = () => {
                         type="email"
                         placeholder="Enter your email"
                         {...field}
+                        disabled={isLoading}
                       />
                     </FormControl>
                     <FormMessage />
@@ -116,6 +151,7 @@ const SignUp = () => {
                         type="password"
                         placeholder="Create a password"
                         {...field}
+                        disabled={isLoading}
                       />
                     </FormControl>
                     <FormDescription>
@@ -130,8 +166,9 @@ const SignUp = () => {
               <Button
                 type="submit"
                 className="rounded-sm bg-blue-600 hover:bg-blue-800"
+                disabled={isLoading}
               >
-                Sign up
+                {isLoading ? "Creating account..." : "Sign up"}
               </Button>
             </form>
           </Form>
@@ -140,6 +177,7 @@ const SignUp = () => {
           <Button
             className="rounded-sm border-2 border-gray-100"
             variant="ghost"
+            disabled={isLoading}
           >
             <Image src={GoogleLogo} alt="Google Logo" /> Sign up with Google
           </Button>
@@ -148,7 +186,7 @@ const SignUp = () => {
           <p className="text-center text-sm text-gray-500">
             Already have an account?{" "}
             <Link
-              href="#"
+              href="/login"
               className="text-blue-500 hover:underline font-semibold"
             >
               Log in

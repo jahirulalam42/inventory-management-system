@@ -1,19 +1,19 @@
 "use client";
-import { useAuth } from "@/context/AuthContext";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
 
-export default function Home() {
-  const router = useRouter();
+export default function ProtectedRoute({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const { user, loading } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
-    if (!loading) {
-      if (user) {
-        router.push("/dashboard");
-      } else {
-        router.push("/login");
-      }
+    if (!loading && !user) {
+      router.push("/login");
     }
   }, [user, loading, router]);
 
@@ -24,5 +24,6 @@ export default function Home() {
       </div>
     );
   }
-  return null;
+
+  return user ? <>{children}</> : null;
 }

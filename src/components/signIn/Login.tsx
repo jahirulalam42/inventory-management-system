@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import LoginLogo from "../../../public/images/Logo-login.png";
 import LoginLogoSmall from "../../../public/images/Logo-login-small.png";
@@ -19,6 +19,7 @@ import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { useAuth } from "@/context/AuthContext";
 
 interface Inputs {
   username: string;
@@ -35,8 +36,25 @@ const Login = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log("FORM DATA:", data);
+  const [error, setError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { login } = useAuth();
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const result = await login(data.username, data.password);
+
+      if (!result.success) {
+        setError(result.error || "Login failed. Please try again.");
+      }
+    } catch (error: any) {
+      setError("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -57,7 +75,12 @@ const Login = () => {
         </p>
 
         <div className="min-w-sm flex flex-col gap-6">
-          {/* IMPORTANT PART */}
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 p-3 rounded-md text-sm">
+              {error}
+            </div>
+          )}
+
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
@@ -67,12 +90,22 @@ const Login = () => {
               <FormField
                 control={form.control}
                 name="username"
-                rules={{ required: "Username is required" }}
+                rules={{
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email address",
+                  },
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your email" {...field} />
+                      <Input
+                        placeholder="Enter your email"
+                        {...field}
+                        disabled={isLoading}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -83,7 +116,13 @@ const Login = () => {
               <FormField
                 control={form.control}
                 name="password"
-                rules={{ required: "Password is required" }}
+                rules={{
+                  required: "Password is required",
+                  minLength: {
+                    value: 8,
+                    message: "Password must be at least 8 characters",
+                  },
+                }}
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Password</FormLabel>
@@ -92,6 +131,7 @@ const Login = () => {
                         type="password"
                         placeholder="********"
                         {...field}
+                        disabled={isLoading}
                       />
                     </FormControl>
                     <FormMessage />
@@ -105,12 +145,13 @@ const Login = () => {
                   <Checkbox
                     checked={form.watch("remember")}
                     onCheckedChange={(val) => form.setValue("remember", !!val)}
+                    disabled={isLoading}
                   />
                   <Label>Remember for 30 days</Label>
                 </div>
 
                 <Link
-                  href="#"
+                  href="/forgot-password"
                   className="text-blue-500 hover:underline font-semibold"
                 >
                   Forgot password?
@@ -121,8 +162,9 @@ const Login = () => {
               <Button
                 type="submit"
                 className="rounded-sm bg-blue-600 hover:bg-blue-800"
+                disabled={isLoading}
               >
-                Sign in
+                {isLoading ? "Signing in..." : "Sign in"}
               </Button>
             </form>
           </Form>
@@ -131,6 +173,7 @@ const Login = () => {
           <Button
             className="rounded-sm border-2 border-gray-100"
             variant="ghost"
+            disabled={isLoading}
           >
             <Image src={GoogleLogo} alt="Google Logo" /> Sign in with Google
           </Button>
@@ -138,7 +181,7 @@ const Login = () => {
           <p className="text-center text-sm text-gray-500">
             Don&apos;t have an account?{" "}
             <Link
-              href="#"
+              href="/signup"
               className="text-blue-500 hover:underline font-semibold"
             >
               Sign up
