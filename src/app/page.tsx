@@ -7,11 +7,13 @@ export default function Home() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
+  console.log("User Data", session);
+
   useEffect(() => {
     if (session?.user) {
-      // router.push("/dashboard");
+      router.push("/dashboard");
     } else {
-      // router.push("/login");
+      router.push("/login");
     }
   }, [session, router]);
 

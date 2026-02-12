@@ -1,12 +1,29 @@
+"use client";
 import React from "react";
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
 } from "../ui/input-group";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  BadgeCheckIcon,
+  BellIcon,
+  CreditCardIcon,
+  LogOutIcon,
+} from "lucide-react";
 import { Bell, Search } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { SidebarTrigger } from "../ui/sidebar";
+import { signOut } from "next-auth/react";
 
 const Header = () => {
   return (
@@ -27,10 +44,27 @@ const Header = () => {
           <Bell />
         </span>
         <div>
-          <Avatar className="w-8 h-8 lg:w-11 lg:h-11">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <Avatar className="w-8 h-8 lg:w-11 lg:h-11">
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="shadcn"
+                  />
+                  <AvatarFallback>LR</AvatarFallback>
+                </Avatar>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem
+                onClick={() => signOut({ callbackUrl: "/login" })}
+              >
+                <LogOutIcon />
+                <span>Sign Out</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>
