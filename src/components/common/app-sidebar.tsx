@@ -1,3 +1,4 @@
+"use client";
 import {
   BaggageClaim,
   CircleUser,
@@ -23,6 +24,8 @@ import {
 } from "@/components/ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
+import { signOut } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 // Menu items.
 const items = [
@@ -58,20 +61,9 @@ const items = [
   },
 ];
 
-const footerItems = [
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Log Out",
-    url: "#",
-    icon: LogOut,
-  },
-];
-
 export function AppSidebar() {
+  const pathName = usePathname();
+
   return (
     <Sidebar>
       <SidebarContent>
@@ -83,7 +75,11 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton size={"xl"} asChild>
+                  <SidebarMenuButton
+                    className={pathName === item.url ? "text-blue-500" : ""}
+                    size={"xl"}
+                    asChild
+                  >
                     <Link href={item.url}>
                       <item.icon className="size-6!" />
                       <span>{item.title}</span>
@@ -99,16 +95,19 @@ export function AppSidebar() {
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenu>
-            {footerItems.map((item) => (
-              <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton size={"xl"} asChild>
-                  <Link href={item.url}>
-                    <item.icon className="size-6!" />
-                    <span>{item.title}</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                className="cursor-pointer"
+                onClick={() => signOut({ callbackUrl: "/login" })}
+                size={"xl"}
+                asChild
+              >
+                <div>
+                  <LogOut className="size-6!" />
+                  <span>Log Out</span>
+                </div>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
           </SidebarMenu>
         </SidebarMenu>
       </SidebarFooter>

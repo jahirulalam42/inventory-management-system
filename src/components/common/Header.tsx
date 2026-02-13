@@ -61,7 +61,7 @@ const Header = () => {
                 onClick={() => signOut({ callbackUrl: "/login" })}
               >
                 <LogOutIcon />
-                <span>Sign Out</span>
+                <span>Log Out</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
