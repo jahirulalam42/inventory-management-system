@@ -7,7 +7,7 @@ export default function Home() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  console.log("User Data", session);
+  // console.log("User Data", session);
 
   useEffect(() => {
     if (session?.user) {
@@ -16,8 +16,6 @@ export default function Home() {
       router.push("/login");
     }
   }, [session, router]);
-
-  console.log(session);
 
   // if (loading) {
   //   return (

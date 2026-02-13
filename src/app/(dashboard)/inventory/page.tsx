@@ -24,7 +24,7 @@ const page = () => {
     fetchData();
   }, [dispatch]);
 
-  console.log("Inventory Data", data);
+  // console.log("Inventory Data", data);
 
   if (loading) {
     return <LoadingSpinner />;

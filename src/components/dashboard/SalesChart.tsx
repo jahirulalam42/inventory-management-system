@@ -34,7 +34,7 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
 const SalesChart = () => {
@@ -43,10 +43,10 @@ const SalesChart = () => {
   const data = useSelector((state: any) => state.dashboard.salesPurchasesChart);
   const dayValue = useSelector((state: any) => state.dashboard.dayValue);
   const filteredData = useSelector(
-    (state: any) => state.dashboard.filteredData
+    (state: any) => state.dashboard.filteredData,
   );
 
-  console.log("Filtered Data", filteredData);
+  // console.log("Filtered Data", filteredData);
 
   const handleDayValue = (value: any) => {
     dispatch(setDayValue(value));

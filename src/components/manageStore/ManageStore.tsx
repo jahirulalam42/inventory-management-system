@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 
 const ManageStore = ({ data }: any) => {
-  console.log("Store Data", data);
+  // console.log("Store Data", data);
   return (
     <div className="w-full rounded-sm p-4 bg-white flex flex-col gap-6">
       <div className="flex flex-row justify-between">

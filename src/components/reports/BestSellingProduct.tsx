@@ -4,7 +4,7 @@ import { DataTable } from "../table/data-table";
 import { bestSellingProductColumns } from "../table/columns";
 
 const BestSellingProduct = ({ data }: any) => {
-  console.log("Best Selling Product", data);
+  // console.log("Best Selling Product", data);
   return (
     <div className="h-fit rounded-sm flex flex-col gap-2 bg-white p-4">
       <div className="w-full flex flex-row justify-between">

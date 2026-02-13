@@ -22,7 +22,7 @@ async function setupNextAuthCollections() {
       .collection("sessions")
       .createIndex({ sessionToken: 1 }, { unique: true });
 
-    console.log("NextAuth collections setup completed!");
+    // console.log("NextAuth collections setup completed!");
   } catch (error) {
     console.error("Setup error:", error);
   } finally {

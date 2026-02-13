@@ -38,7 +38,7 @@ const SuppliersTable = ({ data, filters }: any) => {
   const currentPageProduct = updatedProduct?.slice(startIndex, endIndex);
 
   const handleSubmit = (e: any) => {
-    console.log("Submitted Event", e);
+    // console.log("Submitted Event", e);
   };
   const handleSelect = (value: string) => {
     setSelectValue(value);

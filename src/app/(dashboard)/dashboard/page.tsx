@@ -21,7 +21,6 @@ const page = () => {
   useEffect(() => {
     async function fetchData() {
       const result = await getDashboardData();
-      console.log("Dashboard Result", result);
       if (result?.status === 200) {
         dispatch(setData(result?.data));
         setLoading(false);
@@ -29,8 +28,6 @@ const page = () => {
     }
     fetchData();
   }, [dispatch]);
-
-  // console.log(data);
 
   if (loading) {
     return <LoadingSpinner />;

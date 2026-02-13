@@ -19,7 +19,7 @@ const page = () => {
     fetchData();
   }, []);
 
-  console.log("Manage Store Data", data);
+  // console.log("Manage Store Data", data);
   if (loading) {
     return <LoadingSpinner />;
   }
