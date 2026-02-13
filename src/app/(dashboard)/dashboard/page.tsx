@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+import LoadingSpinner from "@/components/common/LoadingSpinner";
 import InventorySummaryCard from "@/components/dashboard/InventorySummaryCard";
 import LowQuantity from "@/components/dashboard/LowQuantity";
 import OrderChart from "@/components/dashboard/OrderChart";
@@ -15,17 +16,25 @@ import { useSelector, useDispatch } from "react-redux";
 
 const page = () => {
   const dispatch = useDispatch();
-  // const [data, setData] = useState<any>();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       const result = await getDashboardData();
-      dispatch(setData(result));
+      console.log("Dashboard Result", result);
+      if (result?.status === 200) {
+        dispatch(setData(result?.data));
+        setLoading(false);
+      }
     }
     fetchData();
   }, [dispatch]);
 
   // console.log(data);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-2 xl:gap-6">

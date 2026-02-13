@@ -1,4 +1,5 @@
 "use client";
+import LoadingSpinner from "@/components/common/LoadingSpinner";
 import InventoryTable from "@/components/inventory/InventoryTable";
 import OverallInventory from "@/components/inventory/OverallInventory";
 import { setInventoryData } from "@/features/inventory/inventorySlice";
@@ -7,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const page = () => {
-  // const [data, setData] = useState<any>();
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   const data = useSelector((state: any) => state.inventory.data);
@@ -15,12 +16,20 @@ const page = () => {
   useEffect(() => {
     async function fetchData() {
       const result = await getInventoryData();
-      dispatch(setInventoryData(result));
+      if (result?.status === 200) {
+        dispatch(setInventoryData(result?.data));
+        setLoading(false);
+      }
     }
     fetchData();
   }, [dispatch]);
 
   console.log("Inventory Data", data);
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className="flex flex-col gap-4">
       <OverallInventory />

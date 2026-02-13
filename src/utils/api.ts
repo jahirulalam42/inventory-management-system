@@ -5,7 +5,7 @@ export async function getDashboardData() {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_RENDER_EXTERNAL_HOSTNAME}/dashboard`,
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }
@@ -16,7 +16,7 @@ export async function getInventoryData() {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_RENDER_EXTERNAL_HOSTNAME}/inventory`,
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }
@@ -27,7 +27,7 @@ export async function getReportsData() {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_RENDER_EXTERNAL_HOSTNAME}/reports`,
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }
@@ -38,7 +38,7 @@ export async function getSuppliersData() {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_RENDER_EXTERNAL_HOSTNAME}/suppliers`,
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }
@@ -49,7 +49,7 @@ export async function getOrdersData() {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_RENDER_EXTERNAL_HOSTNAME}/orders`,
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }
@@ -60,7 +60,7 @@ export async function getManageStoreData() {
     const response = await axios.get(
       `${process.env.NEXT_PUBLIC_RENDER_EXTERNAL_HOSTNAME}/manageStore`,
     );
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error);
   }
