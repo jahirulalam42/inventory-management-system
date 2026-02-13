@@ -1,5 +1,6 @@
 "use client";
 import SuppliersTable from "@/components/suppliers/SuppliersTable";
+import { getSuppliersData } from "@/utils/api";
 import React, { useEffect, useState } from "react";
 
 const page = () => {
@@ -8,9 +9,8 @@ const page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:4000/suppliers");
-        const result = await response.json();
-        setData(result);
+        const response = await getSuppliersData();
+        setData(response);
       } catch (error) {
         console.error("Error fetching suppliers data:", error);
       }
